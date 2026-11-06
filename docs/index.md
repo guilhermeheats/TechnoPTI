@@ -135,4 +135,5 @@ Suporte Técnico Mensal, contra **R$ 100/h** dos demais serviços.
 - [Modelo matemático](modelo-matematico.md) — formulação e resultados.
 - [Estrutura](estrutura.md) — pastas, banco e o que é versionado.
 - [Documentação (MkDocs)](mkdocs.md) — como manter e publicar este site.
+- [CI/CD e release](ci-cd.md) — GitHub Actions, releases e pacote GHCR.
 - [FAQ](faq.md) — perguntas prováveis da apresentação.

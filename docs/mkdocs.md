@@ -28,6 +28,7 @@ TechnoPTI/
     ├── modelo-matematico.md
     ├── estrutura.md
     ├── mkdocs.md
+    ├── ci-cd.md
     ├── faq.md
     ├── assets/
     │   ├── materiais/
@@ -143,6 +144,7 @@ nav:
   - Modelo matemático: modelo-matematico.md
   - Estrutura: estrutura.md
   - Documentação (MkDocs): mkdocs.md
+  - CI/CD e release: ci-cd.md
   - FAQ: faq.md
 ```
 

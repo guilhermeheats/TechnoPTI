@@ -154,8 +154,8 @@ Não há Redux, Zustand ou Context global. O estado é passado por props para
 ## Integração com a API
 
 As chamadas usam a instância `api` de `src/api.js`. A URL base vem de
-`VITE_API_URL`; se a variável não existir, o padrão é
-`http://127.0.0.1:5000`:
+`VITE_API_URL`; em desenvolvimento, o padrão é `http://127.0.0.1:5000`; no
+build de produção, o padrão é a própria origem:
 
 | Arquivo | Chamada |
 |---|---|
@@ -217,9 +217,11 @@ O resultado fica em `dist/`, que é ignorado pelo Git. Para testar o build:
 npm run preview
 ```
 
-Para publicar, sirva `dist/` em um servidor estático e ajuste a URL da API para
-o endereço público do backend. O backend Flask de desenvolvimento não deve ser
-exposto diretamente em produção sem um servidor WSGI e configuração de CORS.
+No container do projeto, o Flask serve o `dist/` e a API na mesma origem, então
+não é necessário configurar `VITE_API_URL`. Para hospedar o frontend em um
+servidor estático separado, gere o build com `VITE_API_URL` apontando para o
+backend público. O Flask de desenvolvimento não deve ser exposto diretamente em
+produção; o container usa Waitress como servidor WSGI.
 
 ## Limitações e próximos passos
 

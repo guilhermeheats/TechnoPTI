@@ -32,8 +32,9 @@ src/
 
 ## API
 
-O frontend chama o backend em `http://127.0.0.1:5000` por padrão. A URL vem de
-`VITE_API_URL` e pode ser alterada em `.env.local`; use `.env.example` como
-modelo. A instância do Axios fica em `src/api.js`.
+Em desenvolvimento, o frontend chama `http://127.0.0.1:5000`. No build de
+produção servido pelo Flask, usa a mesma origem. A URL pode ser sobrescrita por
+`VITE_API_URL` em `.env.local`; use `.env.example` como modelo. A instância do
+Axios fica em `src/api.js`.
 
 A documentação detalhada está em [`docs/frontend.md`](../docs/frontend.md).

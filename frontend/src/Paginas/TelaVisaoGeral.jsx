@@ -45,7 +45,7 @@ function TelaVisaoGeral({ variaveis = [], restricoes = [], dados }) {
         <Field.Root mt="20px">
           <Field.Label>Variáveis adicionadas:</Field.Label>
           <List.Root listStyle="none">
-            {variaveis.map((variavel, _) => {
+            {variaveis.map((variavel) => {
               return (
                 <ListItem mb="5px" key={variavel.id}>
                   <Box
@@ -73,7 +73,7 @@ function TelaVisaoGeral({ variaveis = [], restricoes = [], dados }) {
         <Field.Root mt="20px">
           <Field.Label>Restrições adicionadas:</Field.Label>
           <List.Root listStyle="none">
-            {restricoes.map((restricao, _) => {
+            {restricoes.map((restricao) => {
               const ehNaoNegatividade =
                 restricao.nome.includes("Não-negatividade");
               return ehNaoNegatividade ? null : (

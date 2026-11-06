@@ -44,7 +44,7 @@ const MyCustomPie = (props) => {
 
 function GraficoPizza({ variaveis, isAnimationActive = true }) {
   const dadosGrafico = Object.entries(variaveis || {})
-    .filter(([_, valor]) => valor > 0)
+    .filter(([, valor]) => valor > 0)
     .map(([nome, valor]) => ({
       name: nome,
       value: valor,

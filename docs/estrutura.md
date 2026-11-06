@@ -8,8 +8,15 @@ TechnoPTI/
 ├── LICENSE
 ├── .gitignore
 ├── .gitattributes
+├── .dockerignore
+├── Dockerfile
 ├── mkdocs.yml
 ├── requirements-docs.txt
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       ├── docs.yml
+│       └── release.yml
 ├── backend/
 │   ├── README.md
 │   ├── app.py
@@ -18,12 +25,15 @@ TechnoPTI/
 │   ├── models.py
 │   ├── solver.py
 │   ├── requirements.txt
+│   ├── requirements-prod.txt
 │   ├── api-tester.html
 │   ├── db.sqlite3
 │   ├── db.sqlite3.backup
 │   ├── routes/
 │   │   ├── problems.py
 │   │   └── results.py
+│   ├── tests/
+│   │   └── test_api.py
 │   └── arquivo/
 │       ├── README.md
 │       ├── main.py
@@ -61,6 +71,7 @@ TechnoPTI/
 │   ├── modelo-matematico.md
 │   ├── estrutura.md
 │   ├── mkdocs.md
+│   ├── ci-cd.md
 │   ├── faq.md
 │   ├── assets/
 │   │   ├── materiais/
@@ -99,6 +110,8 @@ TechnoPTI/
 | Caminho | Situação |
 |---|---|
 | `docs/`, `mkdocs.yml` | Versionados. São a fonte do site. |
+| `.github/workflows/` | Versionado. CI, publicação da documentação e release. |
+| `Dockerfile`, `.dockerignore` | Versionados. Imagem publicada no GHCR. |
 | `docs/assets/materiais/` | Versionado. PDFs, planilhas e DOCX oficiais para download. |
 | `docs/assets/arquivo/` | Versionado. Materiais históricos. O ZIP foi sanitizado sem a pasta `.git`. |
 | `site/` | Ignorado. É gerado pelo `mkdocs build`. |
@@ -148,6 +161,7 @@ O código fica em `backend/`. Os principais arquivos são:
 | `solver.py` | Monta o modelo PuLP, chama o CBC e devolve status, valor ótimo e variáveis. |
 | `routes/problems.py` | Lista, detalha, cria e exclui problemas. |
 | `routes/results.py` | Resolve o problema e consulta o último resultado. |
+| `tests/test_api.py` | Testes de fumaça usados pelo CI. |
 | `api-tester.html` | Página estática para testar as rotas manualmente. |
 
 O caminho do banco é calculado a partir de `backend/database.py`, então o
@@ -250,9 +264,10 @@ O código fica em `frontend/`. As páginas e os componentes principais são:
 | `Cabecalho.jsx` | Cabeçalho da aplicação. |
 | `BotaoAjuda.jsx` | Ajuda contextual. |
 
-A URL da API vem de `VITE_API_URL` e, se não definida, usa
-`http://127.0.0.1:5000`. Copie `frontend/.env.example` para
-`frontend/.env.local` apenas se precisar apontar para outro backend.
+A URL da API vem de `VITE_API_URL`. Em desenvolvimento, o padrão é
+`http://127.0.0.1:5000`; no build de produção servido pelo Flask, o padrão é a
+própria origem. Copie `frontend/.env.example` para `frontend/.env.local` apenas
+se precisar apontar para outro backend.
 
 ### Rotas do frontend
 
@@ -281,6 +296,7 @@ O detalhamento do fluxo, do estado e da integração com a API está em
 | `docs/modelo-matematico.md` | Formulação e solução. |
 | `docs/estrutura.md` | Esta página. |
 | `docs/mkdocs.md` | Fluxo de edição e publicação do site. |
+| `docs/ci-cd.md` | GitHub Actions, releases e pacote GHCR. |
 | `docs/faq.md` | Perguntas frequentes. |
 
 O site é gerado em `site/` e não é versionado. Veja

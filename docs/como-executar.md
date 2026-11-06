@@ -168,6 +168,20 @@ npm run preview
 O build fica em `dist/`, que é ignorado pelo Git. Para publicar, sirva essa
 pasta e ajuste a URL da API. Veja [Frontend](frontend.md#build-e-publicacao).
 
+## Testes do backend
+
+```bash
+cd backend
+python -m unittest discover -s tests -v
+```
+
+No Windows, use o Python do `venv`:
+
+```powershell
+cd backend
+.\venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
 ## Documentação
 
 ### Servir o site

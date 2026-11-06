@@ -1,9 +1,13 @@
 import axios from "axios";
 
-// URL padrão para desenvolvimento local. Pode ser sobrescrita por
-// VITE_API_URL no arquivo .env.local (veja .env.example).
+const defaultBaseUrl = import.meta.env.DEV
+  ? "http://127.0.0.1:5000"
+  : window.location.origin;
+
+// Em desenvolvimento, usa o backend local. Em produção, usa a mesma origem
+// (o Flask serve o build do frontend). VITE_API_URL pode sobrescrever.
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:5000",
+  baseURL: import.meta.env.VITE_API_URL ?? defaultBaseUrl,
 });
 
 export default api;

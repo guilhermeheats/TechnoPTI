@@ -1,5 +1,9 @@
 # Technopti — Sistema de Otimização de Resultados
 
+[![CI](https://github.com/guilhermeheats/TechnoPTI/actions/workflows/ci.yml/badge.svg)](https://github.com/guilhermeheats/TechnoPTI/actions/workflows/ci.yml)
+[![Docs](https://github.com/guilhermeheats/TechnoPTI/actions/workflows/docs.yml/badge.svg)](https://github.com/guilhermeheats/TechnoPTI/actions/workflows/docs.yml)
+[![Release](https://img.shields.io/github/v/release/guilhermeheats/TechnoPTI?display_name=tag)](https://github.com/guilhermeheats/TechnoPTI/releases)
+
 Projeto final para a disciplina de **Programação Linear e Aplicações**.
 
 Aplicação web que automatiza a modelagem e a resolução de problemas de
@@ -15,11 +19,15 @@ Programação Linear, com cadastro guiado de variáveis e restrições, solver
 | Otimização | PuLP com solver CBC |
 | Banco | SQLite |
 | Documentação | MkDocs Material |
+| CI/CD | GitHub Actions, GHCR e Docker |
 
 ## Estrutura
 
 ```text
 TechnoPTI/
+├── .github/workflows/             # CI, documentação e release
+├── .dockerignore
+├── Dockerfile                     # imagem publicada no GHCR
 ├── backend/                       # Flask, SQLAlchemy, SQLite e PuLP/CBC
 │   ├── app.py
 │   ├── run.py                     # launcher usado pelos scripts
@@ -27,7 +35,9 @@ TechnoPTI/
 │   ├── models.py
 │   ├── solver.py
 │   ├── routes/
+│   ├── tests/
 │   ├── requirements.txt
+│   ├── requirements-prod.txt
 │   ├── db.sqlite3
 │   ├── db.sqlite3.backup
 │   └── arquivo/                   # protótipos antigos
@@ -57,12 +67,10 @@ Pré-requisitos: **Python 3.11+** (testado em 3.13), **Node.js 20.19+**
 (testado em 24) e **npm**. No Windows, use **PowerShell 5.1+** (Windows 10/11).
 
 ```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git TechnoPTI
+git clone https://github.com/guilhermeheats/TechnoPTI.git
 cd TechnoPTI
 ./scripts/iniciar-technopti.sh
 ```
-
-Substitua `SEU-USUARIO/SEU-REPOSITORIO` pelo endereço do repositório.
 
 Acesse **http://127.0.0.1:5173**. O backend fica em
 **http://127.0.0.1:5000/problems**.
@@ -116,6 +124,7 @@ Páginas principais:
 - [Modelo matemático](docs/modelo-matematico.md)
 - [Estrutura](docs/estrutura.md)
 - [Documentação (MkDocs)](docs/mkdocs.md)
+- [CI/CD e release](docs/ci-cd.md)
 - [FAQ](docs/faq.md)
 
 ## Materiais oficiais
@@ -134,6 +143,26 @@ O roteiro editável em Markdown está em
 > **Materiais antigos:** os roteiros antigos de grupo, a documentação técnica
 > de 36 páginas e o pacote antigo do projeto estão em
 > [`docs/assets/arquivo/`](docs/assets/arquivo/), apenas para histórico.
+
+## CI/CD, release e pacote
+
+O projeto usa **GitHub Actions** para testar backend, frontend e MkDocs, além
+de construir a imagem Docker. Ao enviar uma tag `v*`, o GitHub cria a release
+com os artefatos e publica a imagem no GHCR:
+
+```bash
+git tag -a v1.0.0 -m "Technopti v1.0.0"
+git push origin v1.0.0
+```
+
+Executar o pacote:
+
+```bash
+docker run --rm -p 5000:5000 ghcr.io/guilhermeheats/technopti:latest
+```
+
+Acesse <http://127.0.0.1:5000>. O fluxo completo, permissões e publicação do
+MkDocs estão em [CI/CD e release](docs/ci-cd.md).
 
 ## Resultado oficial
 

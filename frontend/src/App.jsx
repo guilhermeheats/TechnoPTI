@@ -1,5 +1,3 @@
-import { Box } from "@chakra-ui/react";
-import { useState } from "react";
 import Home from "./Paginas/Home.jsx";
 import Problema from "./Paginas/Problema.jsx";
 

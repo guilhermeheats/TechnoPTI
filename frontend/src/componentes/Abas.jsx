@@ -15,7 +15,6 @@ import {
   Select,
   Strong,
   createListCollection,
-  FieldRequiredIndicator,
   InputGroup,
 } from "@chakra-ui/react";
 import { LuScale, LuVariable, LuPlus } from "react-icons/lu";

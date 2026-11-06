@@ -37,6 +37,9 @@ backend/
 │   ├── problems.py     # listar, detalhar, criar e excluir
 │   └── results.py      # resolver e consultar o último resultado
 ├── requirements.txt
+├── requirements-prod.txt  # dependências do container (Waitress)
+├── tests/
+│   └── test_api.py     # testes de fumaça usados pelo CI
 ├── db.sqlite3          # banco da demonstração
 ├── db.sqlite3.backup   # cópia para restaurar
 ├── api-tester.html     # página manual para testar as rotas

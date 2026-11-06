@@ -48,10 +48,19 @@ backend/
 │   ├── problems.py     # listar, detalhar, criar e excluir
 │   └── results.py      # resolver e consultar resultado
 ├── requirements.txt
+├── requirements-prod.txt  # dependências do container (Waitress)
+├── tests/
+│   └── test_api.py     # testes de fumaça usados pelo CI
 ├── db.sqlite3          # banco da demonstração
 ├── db.sqlite3.backup   # cópia para restaurar
 ├── api-tester.html     # teste manual das rotas
 └── arquivo/            # protótipos antigos
+```
+
+## Testes
+
+```bash
+python -m unittest discover -s tests -v
 ```
 
 ## Banco de dados
@@ -77,3 +86,4 @@ cp db.sqlite3.backup db.sqlite3
 - [API REST](../docs/api.md)
 - [Estrutura do projeto](../docs/estrutura.md)
 - [Como executar](../docs/como-executar.md)
+- [CI/CD e release](../docs/ci-cd.md)

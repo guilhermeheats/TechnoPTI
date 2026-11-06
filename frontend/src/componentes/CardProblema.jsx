@@ -54,7 +54,7 @@ function CardProblema({ lista, onRemover, carregando }) {
       const [resEstrutura, resMatematica] = await dispararChamadas();
       setInfoProblema(resEstrutura.data);
       setDetalhes(resMatematica.data);
-    } catch (erro) {
+    } catch {
       console.warn("Lentidão detectada. Aguardando o HD respirar...");
 
       await new Promise((resolve) => setTimeout(resolve, 500));
