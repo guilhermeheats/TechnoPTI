@@ -161,8 +161,15 @@ Executar o pacote:
 docker run --rm -p 5000:5000 ghcr.io/guilhermeheats/technopti:latest
 ```
 
-Acesse <http://127.0.0.1:5000>. O fluxo completo, permissões e publicação do
-MkDocs estão em [CI/CD e release](docs/ci-cd.md).
+Acesse <http://127.0.0.1:5000>. Links publicados:
+
+- **Documentação:** <https://guilhermeheats.github.io/TechnoPTI/>
+- **Release v1.0.0:** <https://github.com/guilhermeheats/TechnoPTI/releases/tag/v1.0.0>
+- **Pacote GHCR:** <https://github.com/guilhermeheats/TechnoPTI/pkgs/container/technopti>
+- **Actions:** <https://github.com/guilhermeheats/TechnoPTI/actions>
+
+O fluxo completo, permissões e publicação do MkDocs estão em
+[CI/CD e release](docs/ci-cd.md).
 
 ## Resultado oficial
 

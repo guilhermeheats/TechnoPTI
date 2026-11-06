@@ -1,5 +1,15 @@
 # CI/CD, releases e pacote
 
+## Publicação atual
+
+| Item | Link |
+|---|---|
+| Documentação | <https://guilhermeheats.github.io/TechnoPTI/> |
+| Release `v1.0.0` | <https://github.com/guilhermeheats/TechnoPTI/releases/tag/v1.0.0> |
+| Pacote GHCR | <https://github.com/guilhermeheats/TechnoPTI/pkgs/container/technopti> |
+| CI | <https://github.com/guilhermeheats/TechnoPTI/actions/workflows/ci.yml> |
+| Todos os workflows | <https://github.com/guilhermeheats/TechnoPTI/actions> |
+
 ## Visão geral
 
 O projeto usa **GitHub Actions** para validar, documentar e publicar o
@@ -107,9 +117,9 @@ docker run --rm -p 5000:5000 \
 
 !!! note "Visibilidade do pacote"
 
-    Por padrão, pacotes do GHCR podem ficar privados mesmo em repositórios
-    públicos. Para permitir o `docker pull` sem autenticação, abra a página do
-    pacote no GitHub e altere a visibilidade para **Public**.
+    O pacote atual está público e pode ser baixado sem autenticação. Se uma
+    publicação futura ficar privada, abra a página do pacote no GitHub e altere
+    a visibilidade para **Public**.
 
 ## Documentação publicada
 
@@ -122,7 +132,7 @@ Para ativar o site:
 3. selecione a branch `gh-pages` e a pasta `/ (root)`;
 4. salve e aguarde a publicação.
 
-A URL esperada é:
+A URL publicada é:
 
 ```text
 https://guilhermeheats.github.io/TechnoPTI/
@@ -145,10 +155,10 @@ gh repo edit guilhermeheats/TechnoPTI \
 
 ## Checklist de publicação
 
-- [ ] CI verde no GitHub Actions.
-- [ ] Workflow **Docs** concluído e branch `gh-pages` criada.
-- [ ] GitHub Pages habilitado em `gh-pages`.
-- [ ] Tag `v1.0.0` criada e enviada.
-- [ ] Release publicada com os dois ZIPs.
-- [ ] Imagem disponível em `ghcr.io/guilhermeheats/technopti`.
-- [ ] Descrição e tópicos configurados no repositório.
+- [x] CI verde no GitHub Actions.
+- [x] Workflow **Docs** concluído e branch `gh-pages` criada.
+- [x] GitHub Pages habilitado em `gh-pages`.
+- [x] Tag `v1.0.0` criada e enviada.
+- [x] Release publicada com os dois ZIPs.
+- [x] Imagem disponível em `ghcr.io/guilhermeheats/technopti`.
+- [x] Descrição e tópicos configurados no repositório.
