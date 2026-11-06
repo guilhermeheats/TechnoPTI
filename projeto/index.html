@@ -1,0 +1,1271 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do sistema de otimização de problemas de Programação Linear">
+      
+      
+        <meta name="author" content="Projeto Technopti">
+      
+      
+      
+        <link rel="prev" href="../documentacao-pdf/">
+      
+      
+        <link rel="next" href="../como-executar/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Projeto - Technopti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projeto" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Technopti" class="md-header__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technopti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projeto
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technopti" class="md-nav__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    Technopti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apresentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roteiro-apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiro em texto
+  
+
+    
+      <br>
+      <small>Apresentação solo | 5 a 7 minutos</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao-pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação em PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problema-motivador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema motivador
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estudo-de-caso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo de caso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo funcional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferenciais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes-atuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitações atuais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-executar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend e banco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-matematico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo matemático
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação (MkDocs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD e release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problema-motivador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema motivador
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estudo-de-caso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estudo de caso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arquitetura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-funcional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo funcional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diferenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferenciais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes-atuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitações atuais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="projeto">Projeto<a class="headerlink" href="#projeto" title="Permanent link">&para;</a></h1>
+<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
+<p>O <strong>Technopti</strong> é uma aplicação web para modelagem e resolução de problemas de
+<strong>Programação Linear</strong>. A proposta é substituir o processo manual em planilhas
+por um fluxo guiado, com validação, persistência e geração automática de relatório.</p>
+<p>O sistema permite:</p>
+<ul>
+<li>cadastrar um problema de maximização ou minimização;</li>
+<li>definir variáveis de decisão, coeficientes e unidades;</li>
+<li>montar restrições com coeficientes por variável;</li>
+<li>resolver o modelo com PuLP/CBC;</li>
+<li>visualizar a solução ótima, o uso das restrições e a folga;</li>
+<li>exportar o relatório em PDF.</li>
+</ul>
+<p><img alt="Tela inicial do Technopti" loading="lazy" src="../assets/img/home.jpg" /></p>
+<h2 id="problema-motivador">Problema motivador<a class="headerlink" href="#problema-motivador" title="Permanent link">&para;</a></h2>
+<p>Empresas tomam decisões de alocação de recursos em planilhas. Isso gera:</p>
+<ul>
+<li>erros de fórmula e de referência;</li>
+<li>retrabalho para montar e conferir o modelo;</li>
+<li>falta de rastreabilidade das decisões;</li>
+<li>dificuldade para comparar cenários;</li>
+<li>pouca clareza na comunicação do resultado.</li>
+</ul>
+<p>O Technopti organiza esse processo em uma aplicação com banco de dados, API REST
+e solver matemático.</p>
+<h2 id="estudo-de-caso">Estudo de caso<a class="headerlink" href="#estudo-de-caso" title="Permanent link">&para;</a></h2>
+<p>O problema oficial é uma empresa de TI com cinco serviços:</p>
+<table>
+<thead>
+<tr>
+<th>Serviço</th>
+<th style="text-align: right;">Lucro unitário</th>
+<th style="text-align: right;">Horas de desenvolvimento</th>
+<th style="text-align: right;">Horas de especialistas</th>
+<th style="text-align: right;">Infraestrutura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desenvolvimento Web</td>
+<td style="text-align: right;">R$ 20.000</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">R$ 20.000</td>
+</tr>
+<tr>
+<td>Desenvolvimento Mobile</td>
+<td style="text-align: right;">R$ 25.000</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">R$ 25.000</td>
+</tr>
+<tr>
+<td>Suporte Técnico Mensal</td>
+<td style="text-align: right;">R$ 10.000</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">R$ 10.000</td>
+</tr>
+<tr>
+<td>Análise de Dados</td>
+<td style="text-align: right;">R$ 30.000</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">R$ 40.000</td>
+</tr>
+<tr>
+<td>Cibersegurança</td>
+<td style="text-align: right;">R$ 35.000</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">R$ 50.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recursos disponíveis:</strong> 4.000 horas de desenvolvimento, 3.000 horas de
+especialistas e R$ 500.000 de infraestrutura.</p>
+<p><strong>Objetivo:</strong> decidir quantos contratos de cada serviço fechar para maximizar o lucro.</p>
+<h2 id="arquitetura">Arquitetura<a class="headerlink" href="#arquitetura" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    U[Usuário] --&gt; F["Frontend&lt;br/&gt;React + Vite + Chakra UI"]
+    F --&gt;|"REST / JSON"| B["Backend&lt;br/&gt;Flask + SQLAlchemy"]
+    B --&gt; DB[("SQLite")]
+    B --&gt; S["PuLP + CBC"]
+    S --&gt; B
+    B --&gt;|"Resultado"| F
+    F --&gt; R["Relatório + PDF"]</code></pre>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>React 19</strong> com <strong>Vite</strong>.</li>
+<li><strong>Chakra UI v3</strong> para componentes e layout.</li>
+<li><strong>Axios</strong> para chamadas à API.</li>
+<li><strong>Recharts</strong> para o gráfico de participação das variáveis.</li>
+<li><strong>html2pdf.js</strong> para exportar o relatório em PDF.</li>
+</ul>
+<p>O fluxo de telas, os componentes e a integração com a API estão em
+<a href="../frontend/">Frontend</a>.</p>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Flask</strong> com blueprints para problemas e resultados.</li>
+<li><strong>Flask-CORS</strong> para permitir o acesso do frontend.</li>
+<li><strong>SQLAlchemy</strong> para persistência.</li>
+<li><strong>PuLP</strong> com o solver <strong>CBC</strong> para resolver o modelo.</li>
+<li><strong>SQLite</strong> como banco local.</li>
+</ul>
+<p>As rotas, os modelos, a sessão por thread e o solver estão em
+<a href="../backend/">Backend e banco</a>.</p>
+<h3 id="banco">Banco<a class="headerlink" href="#banco" title="Permanent link">&para;</a></h3>
+<p>Cinco tabelas guardam o problema, as variáveis, as restrições, os coeficientes e
+os resultados. Veja o detalhamento em <a href="../estrutura/#banco-de-dados">Estrutura</a>.</p>
+<h2 id="fluxo-funcional">Fluxo funcional<a class="headerlink" href="#fluxo-funcional" title="Permanent link">&para;</a></h2>
+<ol>
+<li>O usuário cria um problema e escolhe <strong>maximizar</strong> ou <strong>minimizar</strong>.</li>
+<li>Cadastra as variáveis de decisão e seus coeficientes na função objetivo.</li>
+<li>Cadastra as restrições e vincula cada coeficiente às variáveis.</li>
+<li>O frontend envia o problema completo para <code>POST /problems/create</code>.</li>
+<li>Ao calcular, o backend monta o modelo PuLP e chama o CBC.</li>
+<li>O resultado é salvo e devolvido com status, valor ótimo, variáveis e restrições.</li>
+<li>O frontend mostra a tabela, o gráfico e o relatório.</li>
+<li>O usuário pode exportar o relatório em PDF.</li>
+</ol>
+<h2 id="diferenciais">Diferenciais<a class="headerlink" href="#diferenciais" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Fluxo guiado:</strong> abas e cards organizam variáveis e restrições.</li>
+<li><strong>Validação:</strong> o backend verifica campos obrigatórios, operadores e quantidade de coeficientes.</li>
+<li><strong>Rastreabilidade:</strong> problemas, variáveis, restrições e resultados ficam no banco.</li>
+<li><strong>Feedback visual:</strong> uso e folga de cada restrição são exibidos no relatório.</li>
+<li><strong>Relatório:</strong> o PDF é gerado a partir do próprio relatório renderizado.</li>
+<li><strong>Didático:</strong> o sistema mostra a função objetivo e as restrições em formato matemático.</li>
+</ul>
+<h2 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h2>
+<p>A documentação técnica é um site MkDocs Material:</p>
+<ul>
+<li><a href="../frontend/">Frontend</a> — React, telas, estado e PDF.</li>
+<li><a href="../backend/">Backend e banco</a> — Flask, SQLAlchemy, SQLite e PuLP/CBC.</li>
+<li><a href="../api/">API REST</a> — contrato dos endpoints.</li>
+<li><a href="../mkdocs/">Documentação (MkDocs)</a> — como servir, validar e publicar.</li>
+<li><a href="../estrutura/">Estrutura</a> — árvore do repositório e schema do banco.</li>
+</ul>
+<h2 id="limitacoes-atuais">Limitações atuais<a class="headerlink" href="#limitacoes-atuais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Não há autenticação de usuários.</li>
+<li>Cada problema possui um único objetivo.</li>
+<li>As variáveis são contínuas; não há programação inteira.</li>
+<li>O banco é local (SQLite).</li>
+<li>O backend usa o servidor de desenvolvimento do Flask.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../documentacao-pdf/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Documentação em PDF">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Documentação em PDF
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../como-executar/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Como executar">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Como executar
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Technopti · Projeto de Programação Linear
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

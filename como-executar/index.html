@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do sistema de otimização de problemas de Programação Linear">
+      
+      
+        <meta name="author" content="Projeto Technopti">
+      
+      
+      
+        <link rel="prev" href="../projeto/">
+      
+      
+        <link rel="next" href="../frontend/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Como executar - Technopti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#como-executar" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Technopti" class="md-header__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technopti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Como executar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technopti" class="md-nav__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    Technopti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apresentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roteiro-apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiro em texto
+  
+
+    
+      <br>
+      <small>Apresentação solo | 5 a 7 minutos</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao-pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação em PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clonar-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clonar o repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atalho-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atalho recomendado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows (PowerShell)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-a-passo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo manual
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo a passo manual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-passo-a-passo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows — passo a passo manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nas próximas vezes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-de-producao-do-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build de produção do frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes-do-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes do backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servir-o-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servir o site
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-o-site-estatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar o site estático
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-powershell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows (PowerShell)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacao-manual-do-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalação manual do MkDocs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiais-oficiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materiais oficiais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abrir-planilhas-e-docx-no-libreoffice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abrir planilhas e DOCX no LibreOffice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fazer-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fazer backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restaurar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restaurar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-rapido-da-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste rápido da API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas comuns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encerrar-processos-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encerrar processos manualmente
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend e banco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-matematico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo matemático
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação (MkDocs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD e release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clonar-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clonar o repositório
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atalho-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atalho recomendado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows (PowerShell)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-a-passo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo a passo manual
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo a passo manual">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-passo-a-passo-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows — passo a passo manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nas-proximas-vezes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nas próximas vezes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-de-producao-do-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build de produção do frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testes-do-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testes do backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servir-o-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Servir o site
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-o-site-estatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar o site estático
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-powershell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows (PowerShell)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacao-manual-do-mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Instalação manual do MkDocs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiais-oficiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materiais oficiais
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abrir-planilhas-e-docx-no-libreoffice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abrir planilhas e DOCX no LibreOffice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fazer-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fazer backup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restaurar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restaurar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teste-rapido-da-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Teste rápido da API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas comuns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encerrar-processos-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encerrar processos manualmente
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="como-executar">Como executar<a class="headerlink" href="#como-executar" title="Permanent link">&para;</a></h1>
+<h2 id="clonar-o-repositorio">Clonar o repositório<a class="headerlink" href="#clonar-o-repositorio" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git<span class="w"> </span>TechnoPTI
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>TechnoPTI
+</code></pre></div>
+<p>Substitua <code>SEU-USUARIO/SEU-REPOSITORIO</code> pelo endereço do seu repositório.
+Todos os comandos abaixo partem da <strong>raiz do repositório</strong>, salvo indicação
+contrária.</p>
+<h2 id="atalho-recomendado">Atalho recomendado<a class="headerlink" href="#atalho-recomendado" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./scripts/iniciar-technopti.sh
+</code></pre></div>
+<p>O script:</p>
+<ul>
+<li>cria o <code>venv</code> do backend e instala as dependências se ainda não existirem;</li>
+<li>instala as dependências do frontend se <code>node_modules/</code> não existir;</li>
+<li>inicia o backend em <code>http://127.0.0.1:5000</code>;</li>
+<li>inicia o frontend em <code>http://127.0.0.1:5173</code>;</li>
+<li>grava os logs em <code>.technopti-logs/</code>;</li>
+<li>não duplica processos se os servidores já estiverem no ar.</li>
+</ul>
+<p>Para parar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./scripts/parar-technopti.sh
+</code></pre></div>
+<h2 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Serviço</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td><a href="http://127.0.0.1:5173">http://127.0.0.1:5173</a></td>
+</tr>
+<tr>
+<td>Backend</td>
+<td><a href="http://127.0.0.1:5000/problems">http://127.0.0.1:5000/problems</a></td>
+</tr>
+<tr>
+<td>Documentação</td>
+<td><a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Ferramenta</th>
+<th>Versão usada no projeto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>3.11+ (testado em 3.13)</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>20.19+ (testado em 24)</td>
+</tr>
+<tr>
+<td>npm</td>
+<td>compatível com o Node instalado</td>
+</tr>
+<tr>
+<td>PowerShell</td>
+<td>5.1+ no Windows 10/11</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>para testar a API</td>
+</tr>
+<tr>
+<td>Firefox/Chrome</td>
+<td>para a interface</td>
+</tr>
+</tbody>
+</table>
+<p>Os scripts Bash são para <strong>Linux e macOS</strong>. No Windows, use os scripts
+PowerShell em <code>scripts/windows/</code> ou o passo a passo manual abaixo.</p>
+<h2 id="windows-powershell">Windows (PowerShell)<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h2>
+<p>Na raiz do repositório:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">iniciar-technopti</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Para parar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">parar-technopti</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Os scripts verificam Python, Node.js e npm, criam o <code>venv</code> do backend,
+instalam as dependências que faltarem e sobem os dois serviços. Os logs ficam
+em <code>.technopti-logs\backend.log</code>, <code>.technopti-logs\frontend.log</code> e nos
+arquivos <code>.err.log</code> correspondentes.</p>
+<p>Se preferir liberar a execução de scripts apenas na sessão atual do PowerShell:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">iniciar-technopti</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<h2 id="passo-a-passo-manual">Passo a passo manual<a class="headerlink" href="#passo-a-passo-manual" title="Permanent link">&para;</a></h2>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>python<span class="w"> </span>run.py
+</code></pre></div>
+<p>O backend sobe em <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. <code>run.py</code> inicia sem recarga; para
+desenvolver com recarga automática, use <code>python app.py</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Banco de dados</p>
+<p>O caminho de <code>db.sqlite3</code> é calculado a partir de <code>backend/database.py</code>.
+O banco fica sempre em <code>backend/db.sqlite3</code>, não importa de onde o
+comando seja executado.</p>
+</div>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<p>Em outro terminal, a partir da raiz:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>npm<span class="w"> </span>install
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Acesse <a href="http://127.0.0.1:5173">http://127.0.0.1:5173</a>.</p>
+<p>Por padrão, o frontend chama <code>http://127.0.0.1:5000</code>. Para usar outro
+endereço, copie <code>frontend/.env.example</code> para <code>frontend/.env.local</code> e ajuste
+<code>VITE_API_URL</code>.</p>
+<h3 id="windows-passo-a-passo-manual">Windows — passo a passo manual<a class="headerlink" href="#windows-passo-a-passo-manual" title="Permanent link">&para;</a></h3>
+<p>Backend:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd </span><span class="n">backend</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">python</span> <span class="n">run</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Em outro terminal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd </span><span class="n">frontend</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">npm</span> <span class="n">install</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">npm</span> <span class="n">run</span> <span class="n">dev</span>
+</code></pre></div>
+<p>Se a política de execução do PowerShell bloquear o <code>Activate.ps1</code>, use
+<code>venv\Scripts\activate.bat</code> no Prompt de Comando.</p>
+<h3 id="nas-proximas-vezes">Nas próximas vezes<a class="headerlink" href="#nas-proximas-vezes" title="Permanent link">&para;</a></h3>
+<p>Backend:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>python<span class="w"> </span>run.py
+</code></pre></div>
+<p>Frontend:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<h3 id="build-de-producao-do-frontend">Build de produção do frontend<a class="headerlink" href="#build-de-producao-do-frontend" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>npm<span class="w"> </span>run<span class="w"> </span>preview
+</code></pre></div>
+<p>O build fica em <code>dist/</code>, que é ignorado pelo Git. Para publicar, sirva essa
+pasta e ajuste a URL da API. Veja <a href="../frontend/#build-e-publicacao">Frontend</a>.</p>
+<h2 id="testes-do-backend">Testes do backend<a class="headerlink" href="#testes-do-backend" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>python<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>tests<span class="w"> </span>-v
+</code></pre></div>
+<p>No Windows, use o Python do <code>venv</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd </span><span class="n">backend</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">unittest</span> <span class="n">discover</span> <span class="n">-s</span> <span class="n">tests</span> <span class="n">-v</span>
+</code></pre></div>
+<h2 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h2>
+<h3 id="servir-o-site">Servir o site<a class="headerlink" href="#servir-o-site" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>./scripts/iniciar-docs.sh
+</code></pre></div>
+<p>Acesse <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+<p>Para parar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>./scripts/parar-docs.sh
+</code></pre></div>
+<h3 id="gerar-o-site-estatico">Gerar o site estático<a class="headerlink" href="#gerar-o-site-estatico" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>./scripts/gerar-docs.sh
+</code></pre></div>
+<p>O script executa <code>mkdocs build --clean --strict</code> e gera <code>site/</code>. O modo estrito
+falha se houver link quebrado ou página fora do <code>nav</code>.</p>
+<h3 id="windows-powershell_1">Windows (PowerShell)<a class="headerlink" href="#windows-powershell_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">iniciar-docs</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Para gerar o site:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">gerar-docs</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Para parar:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">.\</span><span class="n">scripts</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">parar-docs</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<h3 id="instalacao-manual-do-mkdocs">Instalação manual do MkDocs<a class="headerlink" href="#instalacao-manual-do-mkdocs" title="Permanent link">&para;</a></h3>
+<p>Linux/macOS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.mkdocs-venv
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">source</span><span class="w"> </span>.mkdocs-venv/bin/activate
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-docs.txt
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span>-a<span class="w"> </span><span class="m">127</span>.0.0.1:8000
+</code></pre></div>
+<p>Windows (PowerShell):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">py</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">mkdocs-venv</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p">.\.</span><span class="n">mkdocs-venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements-docs</span><span class="p">.</span><span class="n">txt</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="n">python</span> <span class="n">-m</span> <span class="n">mkdocs</span> <span class="n">serve</span> <span class="n">-a</span> <span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8000</span>
+</code></pre></div>
+<p>Se o comando <code>py</code> não existir, use <code>python</code> no lugar.</p>
+<p>Para gerar sem os scripts:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Linux/macOS</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>.mkdocs-venv/bin/mkdocs<span class="w"> </span>build<span class="w"> </span>--clean<span class="w"> </span>--strict
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c"># Windows</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">.\.</span><span class="n">mkdocs-venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">mkdocs</span> <span class="n">build</span> <span class="p">-</span><span class="n">-clean</span> <span class="p">-</span><span class="n">-strict</span>
+</code></pre></div>
+<p>O fluxo completo de edição, navegação, imagens e publicação está em
+<a href="../mkdocs/">Documentação (MkDocs)</a>.</p>
+<h2 id="materiais-oficiais">Materiais oficiais<a class="headerlink" href="#materiais-oficiais" title="Permanent link">&para;</a></h2>
+<p>Os PDFs, planilhas e o DOCX ficam em <code>docs/assets/materiais/</code> e também podem
+ser baixados pela página <a href="../documentacao-pdf/">Documentação em PDF</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docs/assets/materiais/ROTEIRO-APRESENTACAO-TECHNOPTI.pdf</code></td>
+<td>Roteiro da apresentação.</td>
+</tr>
+<tr>
+<td><code>docs/assets/materiais/Relatorio-Oficial-Technopti.pdf</code></td>
+<td>Backup do relatório.</td>
+</tr>
+<tr>
+<td><code>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx</code></td>
+<td>Planilha com o Solver.</td>
+</tr>
+<tr>
+<td><code>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx</code></td>
+<td>Cronograma.</td>
+</tr>
+<tr>
+<td><code>docs/assets/materiais/TRABALHO-FINAL-APLICACAO-PROGRAMACAO-LINEAR.docx</code></td>
+<td>Trabalho final.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="abrir-planilhas-e-docx-no-libreoffice">Abrir planilhas e DOCX no LibreOffice<a class="headerlink" href="#abrir-planilhas-e-docx-no-libreoffice" title="Permanent link">&para;</a></h2>
+<p>O script abaixo é opcional e útil para abrir os materiais com a interface
+clara do LibreOffice durante a apresentação:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--calc<span class="w"> </span>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--calc<span class="w"> </span>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--writer<span class="w"> </span>docs/assets/materiais/TRABALHO-FINAL-APLICACAO-PROGRAMACAO-LINEAR.docx
+</code></pre></div>
+<p>O utilitário usa um perfil separado (<code>~/.config/libreoffice-technopti-claro</code>)
+e não altera o perfil normal do LibreOffice. Se o perfil não existir, abre com
+o perfil padrão.</p>
+<h2 id="banco-de-dados">Banco de dados<a class="headerlink" href="#banco-de-dados" title="Permanent link">&para;</a></h2>
+<p>O banco fica em:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>backend/db.sqlite3
+</code></pre></div>
+<p>Ele já contém o problema oficial e o resultado salvo. O arquivo
+<code>db.sqlite3.backup</code> é uma cópia limpa para restaurar a demonstração.</p>
+<h3 id="fazer-backup">Fazer backup<a class="headerlink" href="#fazer-backup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>cp<span class="w"> </span>db.sqlite3<span class="w"> </span>db.sqlite3.backup
+</code></pre></div>
+<h3 id="restaurar">Restaurar<a class="headerlink" href="#restaurar" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>cp<span class="w"> </span>db.sqlite3.backup<span class="w"> </span>db.sqlite3
+</code></pre></div>
+<p>Depois reinicie o backend. O backup versionado contém o problema oficial.</p>
+<h2 id="teste-rapido-da-api">Teste rápido da API<a class="headerlink" href="#teste-rapido-da-api" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>curl<span class="w"> </span>http://127.0.0.1:5000/problems
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>curl<span class="w"> </span>http://127.0.0.1:5000/problems/1/result
+</code></pre></div>
+<p>Resposta esperada do problema oficial:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Optimal"</span><span class="p">,</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="nt">"valor_objetivo"</span><span class="p">:</span><span class="w"> </span><span class="mf">500000.0</span><span class="p">,</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">  </span><span class="nt">"variaveis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="w">    </span><span class="nt">"Análise de Dados"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="w">    </span><span class="nt">"Cibersegurança"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="w">    </span><span class="nt">"Des. Mobile"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="w">    </span><span class="nt">"Des. Web"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="w">    </span><span class="nt">"Suporte Téc. Mensal"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.0</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="p">}</span>
+</code></pre></div>
+<p>O contrato completo está em <a href="../api/">API REST</a>.</p>
+<h2 id="problemas-comuns">Problemas comuns<a class="headerlink" href="#problemas-comuns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sintoma</th>
+<th>Causa provável</th>
+<th>Solução</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Address already in use</code> na porta 5000 ou 5173</td>
+<td>Processo antigo rodando</td>
+<td><code>./scripts/parar-technopti.sh</code> ou, no Windows, <code>scripts\windows\parar-technopti.ps1</code></td>
+</tr>
+<tr>
+<td>Frontend abre, mas não lista problemas</td>
+<td>Backend parado</td>
+<td>Inicie o backend e confira <code>curl http://127.0.0.1:5000/problems</code></td>
+</tr>
+<tr>
+<td>Erro 500 ao abrir o relatório</td>
+<td>Banco em estado inconsistente</td>
+<td>Restaure <code>db.sqlite3.backup</code> e reinicie o backend</td>
+</tr>
+<tr>
+<td>PDF não é gerado</td>
+<td>Relatório ainda carregando ou bloqueio do navegador</td>
+<td>Aguarde o relatório completo e tente de novo; use o PDF de backup</td>
+</tr>
+<tr>
+<td>Backend não encontra o banco</td>
+<td>Arquivo apagado ou caminho incorreto</td>
+<td>Confira <code>backend/db.sqlite3</code> e restaure o backup</td>
+</tr>
+<tr>
+<td><code>mkdocs: command not found</code></td>
+<td>Venv da documentação não ativado</td>
+<td>Use <code>./scripts/iniciar-docs.sh</code> ou ative <code>.mkdocs-venv</code></td>
+</tr>
+<tr>
+<td><code>npm: command not found</code></td>
+<td>Node.js não instalado</td>
+<td>Instale o Node.js 24 ou compatível</td>
+</tr>
+<tr>
+<td><code>pip install</code> falha no backend</td>
+<td><code>venv</code> não ativado</td>
+<td>Ative <code>venv</code> antes de instalar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="encerrar-processos-manualmente">Encerrar processos manualmente<a class="headerlink" href="#encerrar-processos-manualmente" title="Permanent link">&para;</a></h2>
+<p>Linux/macOS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>fuser<span class="w"> </span>-k<span class="w"> </span><span class="m">5000</span>/tcp
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>fuser<span class="w"> </span>-k<span class="w"> </span><span class="m">5173</span>/tcp
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>fuser<span class="w"> </span>-k<span class="w"> </span><span class="m">8000</span>/tcp
+</code></pre></div>
+<p>Windows (PowerShell):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">5000</span><span class="p">,</span> <span class="n">5173</span><span class="p">,</span> <span class="n">8000</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>    <span class="nb">Get-NetTCPConnection</span> <span class="n">-LocalPort</span> <span class="nv">$_</span> <span class="n">-State</span> <span class="n">Listen</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span> <span class="p">|</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>        <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">OwningProcess</span> <span class="n">-Unique</span> <span class="p">|</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>        <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Stop-Process</span> <span class="n">-Id</span> <span class="nv">$_</span> <span class="n">-Force</span> <span class="p">}</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../projeto/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Projeto">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Projeto
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../frontend/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Frontend">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Frontend
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Technopti · Projeto de Programação Linear
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

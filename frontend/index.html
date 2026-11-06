@@ -1,0 +1,1576 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do sistema de otimização de problemas de Programação Linear">
+      
+      
+        <meta name="author" content="Projeto Technopti">
+      
+      
+      
+        <link rel="prev" href="../como-executar/">
+      
+      
+        <link rel="next" href="../backend/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Frontend - Technopti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frontend" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Technopti" class="md-header__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technopti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frontend
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technopti" class="md-nav__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    Technopti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apresentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roteiro-apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiro em texto
+  
+
+    
+      <br>
+      <small>Apresentação solo | 5 a 7 minutos</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao-pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação em PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-executar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-executar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como executar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como executar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do código
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-do-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo do usuário
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluxo do usuário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapa-1-identificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 1 — identificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-2-variaveis-e-restricoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 2 — variáveis e restrições
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-3-visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 3 — visão geral
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-4-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 4 — resultado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estado-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado da aplicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao-com-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integração com a API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com a API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversao-do-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversão do payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorio-em-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório em PDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-e-publicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build e publicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes-e-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitações e próximos passos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend e banco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-matematico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo matemático
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação (MkDocs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD e release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tecnologias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-executar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Como executar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como executar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-do-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do código
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-do-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluxo do usuário
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fluxo do usuário">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapa-1-identificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 1 — identificação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-2-variaveis-e-restricoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 2 — variáveis e restrições
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-3-visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 3 — visão geral
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-4-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Etapa 4 — resultado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estado-da-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estado da aplicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao-com-a-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integração com a API
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com a API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conversao-do-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conversão do payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relatorio-em-pdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatório em PDF
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-e-publicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build e publicação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes-e-proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitações e próximos passos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h1>
+<h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
+<p>O frontend é uma <strong>Single Page Application (SPA)</strong> em React. Ele oferece o
+cadastro guiado do problema, a revisão dos dados, a chamada ao backend, a
+visualização do resultado e a exportação do relatório em PDF.</p>
+<p>O código fica em:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>frontend/
+</code></pre></div>
+<h2 id="tecnologias">Tecnologias<a class="headerlink" href="#tecnologias" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tecnologia</th>
+<th>Uso no projeto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>React 19</strong></td>
+<td>Componentes e estado da aplicação.</td>
+</tr>
+<tr>
+<td><strong>Vite</strong></td>
+<td>Servidor de desenvolvimento e build.</td>
+</tr>
+<tr>
+<td><strong>Chakra UI v3</strong></td>
+<td>Layout, formulários, diálogos, tabelas e toasts.</td>
+</tr>
+<tr>
+<td><strong>React Router 7</strong></td>
+<td>Navegação entre a Home e o cadastro.</td>
+</tr>
+<tr>
+<td><strong>Axios</strong></td>
+<td>Requisições HTTP para a API Flask.</td>
+</tr>
+<tr>
+<td><strong>Recharts</strong></td>
+<td>Gráfico de participação das variáveis no resultado.</td>
+</tr>
+<tr>
+<td><strong>html2pdf.js</strong></td>
+<td>Geração do relatório em PDF no navegador.</td>
+</tr>
+<tr>
+<td><strong>React Icons</strong></td>
+<td>Ícones da interface.</td>
+</tr>
+</tbody>
+</table>
+<p>As versões exatas estão em <code>frontend/package.json</code>.</p>
+<h2 id="como-executar">Como executar<a class="headerlink" href="#como-executar" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>npm<span class="w"> </span>install
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Acesse <a href="http://127.0.0.1:5173">http://127.0.0.1:5173</a>. O backend precisa estar rodando em
+<a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>. Veja <a href="../como-executar/">Como executar</a>.</p>
+<h3 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run dev</code></td>
+<td>Sobe o Vite em modo de desenvolvimento.</td>
+</tr>
+<tr>
+<td><code>npm run build</code></td>
+<td>Gera o build de produção em <code>dist/</code>.</td>
+</tr>
+<tr>
+<td><code>npm run preview</code></td>
+<td>Serve o build de produção localmente.</td>
+</tr>
+<tr>
+<td><code>npm run lint</code></td>
+<td>Executa o ESLint.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="estrutura-do-codigo">Estrutura do código<a class="headerlink" href="#estrutura-do-codigo" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>src/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── api.js                      # instância do Axios e URL da API
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── App.jsx                     # criação das rotas
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>├── main.jsx                    # bootstrap, Provider e Toaster
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>├── index.css                   # estilos globais
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├── Paginas/
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── RootLayout.jsx          # layout, fundo e cabeçalho
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   ├── Home.jsx                # lista, abertura e exclusão de problemas
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   ├── Problema.jsx            # fluxo guiado em quatro etapas
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   ├── TelaVisaoGeral.jsx      # revisão antes do cálculo
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   └── TelaResultado.jsx       # resultado, gráfico e exportação em PDF
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>├── componentes/
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   ├── Abas.jsx                # variáveis e restrições
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│   ├── BotaoAjuda.jsx          # ajuda contextual
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│   ├── Cabecalho.jsx           # cabeçalho da aplicação
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>│   ├── CardProblema.jsx        # card, modal de relatório e PDF
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>│   ├── CardRestricao.jsx       # item de restrição
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>│   ├── CardVariavel.jsx        # item de variável
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>│   └── GraficoPizza.jsx        # gráfico de participação
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>└── components/ui/              # snippets internos do Chakra UI
+</code></pre></div>
+<h2 id="rotas">Rotas<a class="headerlink" href="#rotas" title="Permanent link">&para;</a></h2>
+<p>O React Router usa <code>createBrowserRouter</code> com duas rotas:</p>
+<table>
+<thead>
+<tr>
+<th>Rota</th>
+<th>Tela</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>Home</code></td>
+<td>Lista os problemas salvos e permite excluir.</td>
+</tr>
+<tr>
+<td><code>/problem</code></td>
+<td><code>Problema</code></td>
+<td>Cadastro guiado. O resultado aparece na etapa 4.</td>
+</tr>
+</tbody>
+</table>
+<p>Não existe rota separada para o resultado: ele é a última etapa do fluxo de
+<code>/problem</code>. Ao recarregar a página, o estado do cadastro é perdido.</p>
+<h2 id="fluxo-do-usuario">Fluxo do usuário<a class="headerlink" href="#fluxo-do-usuario" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    H[Home] --&gt;|Criar problema| E1[Etapa 1&lt;br/&gt;nome e objetivo]
+    E1 --&gt; E2[Etapa 2&lt;br/&gt;variáveis e restrições]
+    E2 --&gt; E3[Etapa 3&lt;br/&gt;visão geral]
+    E3 --&gt;|POST /problems/create&lt;br/&gt;POST /problems/id/solve| API[Backend Flask]
+    API --&gt; E4[Etapa 4&lt;br/&gt;resultado]
+    E4 --&gt; PDF[Exportar PDF]
+    H --&gt;|GET /problems&lt;br/&gt;DELETE /problems/id| API</code></pre>
+<h3 id="etapa-1-identificacao">Etapa 1 — identificação<a class="headerlink" href="#etapa-1-identificacao" title="Permanent link">&para;</a></h3>
+<p>O usuário informa o nome do problema e escolhe <strong>Maximização</strong> ou
+<strong>Minimização</strong>. O campo nome é obrigatório.</p>
+<h3 id="etapa-2-variaveis-e-restricoes">Etapa 2 — variáveis e restrições<a class="headerlink" href="#etapa-2-variaveis-e-restricoes" title="Permanent link">&para;</a></h3>
+<p>A tela <code>Abas</code> organiza duas etapas:</p>
+<ul>
+<li><strong>Variáveis:</strong> nome, unidade de medida e coeficiente na função objetivo.</li>
+<li><strong>Restrições:</strong> nome, operador (<code>&lt;=</code>, <code>&gt;=</code> ou <code>=</code>), limite e coeficientes
+  vinculados a cada variável.</li>
+</ul>
+<p>O botão <strong>Vincular</strong> associa um coeficiente a uma variável. Esse vínculo é
+obrigatório para montar a lista de coeficientes na ordem correta.</p>
+<div class="admonition note">
+<p class="admonition-title">Não-negatividade</p>
+<p>Ao adicionar uma variável, o frontend cria uma restrição visual de
+<strong>não-negatividade</strong>. Ela é apenas informativa: antes de enviar o problema,
+o frontend remove essas restrições e o backend aplica <code>lowBound=0</code> no PuLP.</p>
+</div>
+<h3 id="etapa-3-visao-geral">Etapa 3 — visão geral<a class="headerlink" href="#etapa-3-visao-geral" title="Permanent link">&para;</a></h3>
+<p><code>TelaVisaoGeral</code> mostra o nome, o objetivo, as variáveis e as restrições. Se
+estiver tudo correto, o botão <strong>Calcular</strong> envia o problema ao backend.</p>
+<h3 id="etapa-4-resultado">Etapa 4 — resultado<a class="headerlink" href="#etapa-4-resultado" title="Permanent link">&para;</a></h3>
+<p><code>TelaResultado</code> trata os status retornados pelo solver:</p>
+<ul>
+<li><code>Optimal</code>: mostra a função objetivo, a tabela de quantidades, o lucro/custo
+  ótimo, o gráfico e a análise das restrições.</li>
+<li><code>Infeasible</code>: informa que as restrições são conflitantes.</li>
+<li><code>Unbounded</code>: informa que falta uma restrição de escassez.</li>
+<li>Qualquer outro status: mostra uma mensagem genérica de erro.</li>
+</ul>
+<h2 id="estado-da-aplicacao">Estado da aplicação<a class="headerlink" href="#estado-da-aplicacao" title="Permanent link">&para;</a></h2>
+<p>O estado principal fica em <code>Problema.jsx</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>etapa</code></td>
+<td>Etapa atual do fluxo (1 a 4).</td>
+</tr>
+<tr>
+<td><code>dados</code></td>
+<td>Nome e tipo do objetivo (<code>max</code> ou <code>min</code>).</td>
+</tr>
+<tr>
+<td><code>variaveis</code></td>
+<td>Lista de variáveis com IDs locais.</td>
+</tr>
+<tr>
+<td><code>restricoes</code></td>
+<td>Lista de restrições e coeficientes vinculados.</td>
+</tr>
+<tr>
+<td><code>resultado</code></td>
+<td>Resposta de <code>POST /problems/{id}/solve</code>.</td>
+</tr>
+<tr>
+<td><code>jsonPost</code></td>
+<td>Payload enviado ao backend, usado no relatório.</td>
+</tr>
+<tr>
+<td><code>carregando</code></td>
+<td>Controla o overlay de cálculo.</td>
+</tr>
+</tbody>
+</table>
+<p>Não há Redux, Zustand ou Context global. O estado é passado por props para
+<code>Abas</code>, <code>TelaVisaoGeral</code> e <code>TelaResultado</code>.</p>
+<h2 id="integracao-com-a-api">Integração com a API<a class="headerlink" href="#integracao-com-a-api" title="Permanent link">&para;</a></h2>
+<p>As chamadas usam a instância <code>api</code> de <code>src/api.js</code>. A URL base vem de
+<code>VITE_API_URL</code>; em desenvolvimento, o padrão é <code>http://127.0.0.1:5000</code>; no
+build de produção, o padrão é a própria origem:</p>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Chamada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Home.jsx</code></td>
+<td><code>GET /problems</code> e <code>DELETE /problems/{id}</code>.</td>
+</tr>
+<tr>
+<td><code>Problema.jsx</code></td>
+<td><code>POST /problems/create</code> e <code>POST /problems/{id}/solve</code>.</td>
+</tr>
+<tr>
+<td><code>CardProblema.jsx</code></td>
+<td><code>GET /problems/{id}</code> e <code>GET /problems/{id}/result</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conversao-do-payload">Conversão do payload<a class="headerlink" href="#conversao-do-payload" title="Permanent link">&para;</a></h3>
+<p>O formulário usa nomes amigáveis (<code>max</code>, <code>min</code>) e o backend espera
+<code>maximize</code>/<code>minimize</code>. A conversão acontece em <code>Problema.jsx</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">jsonFinal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="nx">dados</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">objetivo</span><span class="o">:</span><span class="w"> </span><span class="nx">dados</span><span class="p">.</span><span class="nx">tipo</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"max"</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"maximize"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"minimize"</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">variaveis</span><span class="o">:</span><span class="w"> </span><span class="nx">variaveis</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">nome</span><span class="o">:</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">nome</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">coeficiente_objetivo</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">coeficiente_objetivo</span><span class="p">),</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nx">unidade_medida</span><span class="o">:</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">unidade_medida</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">})),</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nx">restricoes</span><span class="o">:</span><span class="w"> </span><span class="nx">restricoesFormatadas</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">};</span>
+</code></pre></div>
+<p>Cada restrição envia <code>coeficientes</code> como uma <strong>lista de números</strong>, na mesma
+ordem do array <code>variaveis</code>. O backend converte essa lista em registros ligados
+aos IDs reais das variáveis. Veja o contrato completo em <a href="../api/">API REST</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Configuração local</p>
+<p>Copie <code>frontend/.env.example</code> para <code>frontend/.env.local</code> e ajuste
+<code>VITE_API_URL</code> para apontar para outro backend. O arquivo <code>.env.local</code> é
+ignorado pelo Git.</p>
+</div>
+<h2 id="relatorio-em-pdf">Relatório em PDF<a class="headerlink" href="#relatorio-em-pdf" title="Permanent link">&para;</a></h2>
+<p>O PDF é gerado <strong>no navegador</strong> com <code>html2pdf.js</code>:</p>
+<ul>
+<li>em <code>TelaResultado.jsx</code>, a partir do nó do resultado recém-calculado;</li>
+<li>em <code>CardProblema.jsx</code>, a partir do modal de um problema já salvo.</li>
+</ul>
+<p>O elemento é capturado com <code>html2canvas</code> em escala 2 e convertido para A4 com
+<code>jsPDF</code>. O arquivo é salvo como <code>relatorio-otimizacao-&lt;nome&gt;.pdf</code>.</p>
+<p>Como o PDF é uma captura do DOM, ele depende do layout renderizado. Se o
+relatório estiver carregando ou o navegador bloquear a operação, use o PDF de
+backup da apresentação.</p>
+<h2 id="build-e-publicacao">Build e publicação<a class="headerlink" href="#build-e-publicacao" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p>O resultado fica em <code>dist/</code>, que é ignorado pelo Git. Para testar o build:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npm<span class="w"> </span>run<span class="w"> </span>preview
+</code></pre></div>
+<p>No container do projeto, o Flask serve o <code>dist/</code> e a API na mesma origem, então
+não é necessário configurar <code>VITE_API_URL</code>. Para hospedar o frontend em um
+servidor estático separado, gere o build com <code>VITE_API_URL</code> apontando para o
+backend público. O Flask de desenvolvimento não deve ser exposto diretamente em
+produção; o container usa Waitress como servidor WSGI.</p>
+<h2 id="limitacoes-e-proximos-passos">Limitações e próximos passos<a class="headerlink" href="#limitacoes-e-proximos-passos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sem autenticação e sem separação de usuários.</li>
+<li>Sem edição de problema: o fluxo é criar, resolver e excluir.</li>
+<li>Sem rota para visualizar um resultado antigo diretamente por URL.</li>
+<li>Sem testes automatizados de componentes.</li>
+<li>O estado é perdido ao recarregar <code>/problem</code>.</li>
+<li>O PDF depende da renderização do navegador.</li>
+<li>O bundle de produção passa de 2 MB; o Vite emite um aviso de chunk grande.</li>
+</ul>
+<p>Melhorias naturais: adicionar testes com Vitest, dividir o bundle com imports
+dinâmicos e criar uma rota <code>/problems/:id</code> para compartilhar resultados.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../como-executar/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Como executar">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Como executar
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../backend/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Backend e banco">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Backend e banco
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Technopti · Projeto de Programação Linear
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

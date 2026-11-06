@@ -1,0 +1,1224 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do sistema de otimização de problemas de Programação Linear">
+      
+      
+        <meta name="author" content="Projeto Technopti">
+      
+      
+      
+        <link rel="prev" href="../apresentacao/">
+      
+      
+        <link rel="next" href="../documentacao-pdf/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Roteiro de Apresentação — Technopti - Technopti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#antes-de-comecar" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Technopti" class="md-header__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technopti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roteiro de Apresentação — Technopti
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technopti" class="md-nav__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    Technopti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apresentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiro em texto
+  
+
+    
+      <br>
+      <small>Apresentação solo | 5 a 7 minutos</small>
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao-pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação em PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-executar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend e banco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-matematico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo matemático
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estrutura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação (MkDocs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD e release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="antes-de-comecar">Antes de começar<a class="headerlink" href="#antes-de-comecar" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Checklist</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>☐ Backend em <code>127.0.0.1:5000</code></td>
+<td>☐ Frontend em <code>127.0.0.1:5173</code></td>
+</tr>
+<tr>
+<td>☐ Home com o problema oficial</td>
+<td>☐ Relatório oficial abrindo</td>
+</tr>
+<tr>
+<td>☐ Exportação de PDF testada</td>
+<td>☐ Backup do banco feito</td>
+</tr>
+<tr>
+<td>☐ Planilha do exercício aberta</td>
+<td>☐ Solver conferido</td>
+</tr>
+<tr>
+<td>☐ Cronograma na <code>Visão Geral</code></td>
+<td>☐ Abas individuais conferidas</td>
+</tr>
+<tr>
+<td>☐ PDF de backup salvo</td>
+<td>☐ Notificações desligadas</td>
+</tr>
+<tr>
+<td>☐ Zoom do navegador em 80–90%</td>
+<td>☐ Cronômetro visível</td>
+</tr>
+<tr>
+<td>☐ Arquivos de apoio abertos</td>
+<td>☐ Janelas posicionadas</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Janelas:</strong> deixe o Technopti na Home, a planilha <code>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx</code> na aba <code>EX_PROJETO</code> e o <code>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx</code> na aba <code>Visão Geral</code>. Se quiser o LibreOffice em modo claro, use <code>./scripts/abrir-libreoffice-claro.sh</code>.</p>
+</blockquote>
+<h1 id="roteiro-falado">Roteiro falado<a class="headerlink" href="#roteiro-falado" title="Permanent link">&para;</a></h1>
+<h2 id="000030-abertura">0:00–0:30 — Abertura<a class="headerlink" href="#000030-abertura" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“Boa tarde. Este é o Technopti, uma aplicação web que automatiza a modelagem e a resolução de problemas de Programação Linear. Hoje eu vou mostrar o exercício que usamos como base, o Solver da planilha e o cronograma do projeto — e, no fim, como o Technopti executa esse mesmo ciclo.”</p>
+</blockquote>
+<h2 id="030105-contexto">0:30–1:05 — Contexto<a class="headerlink" href="#030105-contexto" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“O problema é uma empresa de TI com cinco serviços. Ela precisa decidir quantos contratos fechar para maximizar o lucro, respeitando horas de desenvolvimento, horas de especialistas e orçamento de infraestrutura. É um problema clássico de alocação de recursos, normalmente resolvido em planilhas — com risco de erro, retrabalho e pouca rastreabilidade. O Technopti transforma esse processo em um fluxo guiado, validado e rastreável.”</p>
+</blockquote>
+<h2 id="105130-arquitetura">1:05–1:30 — Arquitetura<a class="headerlink" href="#105130-arquitetura" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“A aplicação tem frontend React com Vite e Chakra UI, backend Flask com SQLAlchemy e PuLP, solver CBC e banco SQLite. O fluxo é: cadastrar o problema, validar os dados, montar o modelo, resolver e gerar o relatório.”</p>
+</blockquote>
+<h2 id="130250-demonstracao-rapida">1:30–2:50 — Demonstração rápida<a class="headerlink" href="#130250-demonstracao-rapida" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“Vou fazer um cadastro curto para mostrar o fluxo.”</p>
+</blockquote>
+<ol>
+<li>Home → <strong>Criar problema</strong>.</li>
+<li>Nome: <code>Demo Rápida</code>; objetivo: <strong>Maximização</strong>.</li>
+<li>Adicionar variável <code>Sites</code>, coeficiente <code>3000</code>, unidade <code>projetos</code>.</li>
+<li>Adicionar variável <code>Apps</code>, coeficiente <code>2000</code>, unidade <code>projetos</code>.</li>
+<li>Aba <strong>Restrições</strong>:</li>
+<li><code>Capacidade da equipe</code>: Sites <code>1</code>, Apps <code>1</code>, operador <code>&lt;=</code>, limite <code>10</code>.</li>
+<li><code>Horas de desenvolvimento</code>: Sites <code>2</code>, Apps <code>1</code>, operador <code>&lt;=</code>, limite <code>16</code>.</li>
+<li>Em cada coeficiente, clicar em <strong>Vincular</strong> antes de adicionar a restrição.</li>
+<li><strong>Seguinte</strong> → <strong>Calcular</strong>.</li>
+</ol>
+<blockquote>
+<p>“O resultado é 6 Sites e 4 Apps, com lucro de R$ 26.000. As duas restrições ficaram 100% utilizadas. O gráfico mostra a participação de cada variável e o PDF é gerado automaticamente.”</p>
+</blockquote>
+<p>Mostrar o gráfico e clicar em <strong>Exportar como PDF</strong>.</p>
+<h2 id="250405-exercicio-e-solver-da-planilha">2:50–4:05 — Exercício e Solver da planilha<a class="headerlink" href="#250405-exercicio-e-solver-da-planilha" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Trocar para <code>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx</code>, aba <code>EX_PROJETO</code>.</li>
+<li>Apontar para o modelo à esquerda e para a tabela à direita.</li>
+</ol>
+<blockquote>
+<p>“Este é o exercício que usamos como referência. O modelo está escrito à esquerda e implementado à direita. Temos cinco variáveis de decisão, X1 a X5, que representam os cinco serviços. A função objetivo está em H5: maximizar 20.000 X1 + 25.000 X2 + 10.000 X3 + 30.000 X4 + 35.000 X5.”</p>
+<p>“As restrições estão nas linhas 9 a 11: horas de desenvolvimento, horas de especialistas e orçamento de infraestrutura. A coluna L calcula o consumo e a coluna M traz os limites: 4.000, 3.000 e 500.000.”</p>
+</blockquote>
+<ol>
+<li>Abrir <strong>Tools → Solver</strong> no LibreOffice (em português, <strong>Ferramentas → Solver</strong>); no Excel, <strong>Dados → Solver</strong>.</li>
+<li>Mostrar os campos já preenchidos: destino <code>$H$5</code>, <strong>Maximum/Máximo</strong>, células variáveis <code>$G$3:$K$3</code>, restrições <code>$L$9:$L$11 &lt;= $M$9:$M$11</code>.</li>
+</ol>
+<blockquote>
+<p>“O modelo do Solver está salvo na própria planilha. A célula de destino é H5, o objetivo é maximizar, as células variáveis são G3:K3, e as restrições são L9:L11 menores ou iguais a M9:M11. Também marcamos as variáveis como não negativas.”</p>
+</blockquote>
+<ol>
+<li>Fechar o Solver e apontar para o resultado na planilha.</li>
+</ol>
+<blockquote>
+<p>“A solução encontrada é 50 contratos de Suporte Técnico Mensal, com Z igual a 500.000. Na planilha, isso aparece como 0, 0, 50, 0, 0 em G3:K3 e 500.000 em H5. As três restrições ficam no limite. O motivo é o retorno por hora escassa: R$ 125 por hora de desenvolvimento, contra R$ 100 dos outros serviços.”</p>
+<p><strong>Nota:</strong> o Solver já vem preenchido com o modelo salvo. Para a apresentação, basta mostrar os campos e o resultado. Se quiser demonstrar, clique em <strong>Resolver/Solve</strong>; o resultado será o mesmo.</p>
+</blockquote>
+<h2 id="405455-problema-oficial-no-technopti">4:05–4:55 — Problema oficial no Technopti<a class="headerlink" href="#405455-problema-oficial-no-technopti" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Voltar ao navegador, Home.</li>
+<li>Abrir o problema <strong>“Maximização da Empresa de TI”</strong>.</li>
+</ol>
+<blockquote>
+<p>“Aqui está o mesmo problema cadastrado no Technopti. São cinco variáveis e três restrições. O sistema resolve com PuLP e CBC e devolve 50 contratos de Suporte Técnico Mensal, com lucro de R$ 500.000. As três restrições ficam no limite: 4.000 horas de desenvolvimento, 3.000 horas de especialistas e R$ 500.000 de infraestrutura.”</p>
+<p>“O resultado é exatamente o mesmo da planilha — o que muda é o processo. O modelo é construído e validado pelo sistema, o resultado fica persistido e o relatório é gerado automaticamente.”</p>
+</blockquote>
+<p>Mostrar a tabela de restrições e o relatório já gerado.</p>
+<h2 id="455540-cronograma-do-projeto">4:55–5:40 — Cronograma do projeto<a class="headerlink" href="#455540-cronograma-do-projeto" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Trocar para <code>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx</code>, aba <code>Visão Geral</code>.</li>
+<li>Mostrar a legenda de status e as colunas de entrega.</li>
+</ol>
+<blockquote>
+<p>“Este é o cronograma do projeto. A aba <strong>Visão Geral</strong> consolida as entregas, os papéis e o foco técnico de cada frente, com o status de cada tarefa. As abas individuais detalham as tarefas de cada frente e permitem acompanhar o que estava previsto para cada data.”</p>
+<p>“O planejamento está organizado em quatro entregas — 28/05, 03/06, 11/06 e 17/06 — e a visão consolidada permite comparar o andamento de todas as frentes. Foi esse cronograma que guiou a divisão do trabalho e o acompanhamento do escopo.”</p>
+</blockquote>
+<ol>
+<li>Abrir uma aba individual rapidamente e voltar à <code>Visão Geral</code>.</li>
+</ol>
+<h2 id="540625-destaques-tecnicos">5:40–6:25 — Destaques técnicos<a class="headerlink" href="#540625-destaques-tecnicos" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“No frontend, o sistema é componentizado e valida os campos. No backend, o JSON vira um modelo PuLP; o CBC retorna Optimal, Infeasible ou Unbounded, e o sistema calcula uso e folga de cada restrição. Tudo é persistido em cinco entidades: problema, variável, restrição, coeficiente e resultado.”</p>
+<p>“A planilha foi a validação manual; o Technopti industrializa esse processo.”</p>
+</blockquote>
+<h2 id="625700-fechamento">6:25–7:00 — Fechamento<a class="headerlink" href="#625700-fechamento" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>“O Technopti fecha o ciclo completo: modelagem, resolução, análise e relatório. A planilha mostra a base matemática; o Solver valida o resultado; o cronograma mostra como o projeto foi conduzido; e a aplicação transforma tudo isso em um fluxo guiado, rastreável e repetível. Obrigado.”</p>
+<p><strong>Se estiver atrasado:</strong> corte a demonstração rápida e vá direto ao problema oficial. Mantenha o bloco do exercício/Solver e o cronograma, que são o foco desta versão.</p>
+<p><strong>Fim do roteiro falado.</strong> A partir daqui estão a cola rápida, os comandos e as respostas para a banca.</p>
+</blockquote>
+<h1 id="cola-rapida">Cola rápida<a class="headerlink" href="#cola-rapida" title="Permanent link">&para;</a></h1>
+<h2 id="exercicio-e-solver-da-planilha">Exercício e Solver da planilha<a class="headerlink" href="#exercicio-e-solver-da-planilha" title="Permanent link">&para;</a></h2>
+<p><strong>Arquivo:</strong> <code>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx</code> — aba <code>EX_PROJETO</code></p>
+<p><strong>Modelo:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Max Z = 20000X1 + 25000X2 + 10000X3 + 30000X4 + 35000X5
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>200X1 + 250X2 + 80X3 + 300X4 + 350X5 &lt;= 4000
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>150X1 + 180X2 + 60X3 + 250X4 + 300X5 &lt;= 3000
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>20000X1 + 25000X2 + 10000X3 + 40000X4 + 50000X5 &lt;= 500000
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>X1..X5 &gt;= 0
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variáveis de decisão</td>
+<td><code>G3:K3</code> (X1..X5)</td>
+</tr>
+<tr>
+<td>Função objetivo</td>
+<td><code>H5</code> = <code>SUMPRODUCT(G2:K2,G3:K3)</code></td>
+</tr>
+<tr>
+<td>Restrições</td>
+<td><code>L9:L11 &lt;= M9:M11</code></td>
+</tr>
+<tr>
+<td>Limites</td>
+<td>4.000 / 3.000 / 500.000</td>
+</tr>
+<tr>
+<td>Configuração do Solver</td>
+<td>maximizar <code>H5</code>, variando <code>G3:K3</code>, sujeito a <code>L9:L11 &lt;= M9:M11</code>, variáveis não negativas</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td><code>G3:K3 = 0, 0, 50, 0, 0</code>; <code>H5 = 500.000</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Células das restrições:</strong> <code>L9:L11</code> usam <code>SUMPRODUCT</code> dos coeficientes da respectiva linha por <code>G3:K3</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Restrição</th>
+<th>Célula</th>
+<th>Limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horas de desenvolvimento</td>
+<td><code>L9</code></td>
+<td><code>M9</code> = 4.000</td>
+</tr>
+<tr>
+<td>Horas de especialistas</td>
+<td><code>L10</code></td>
+<td><code>M10</code> = 3.000</td>
+</tr>
+<tr>
+<td>Infraestrutura</td>
+<td><code>L11</code></td>
+<td><code>M11</code> = 500.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Como mostrar:</strong> abra <strong>Tools → Solver</strong> no LibreOffice (em português, <strong>Ferramentas → Solver</strong>; no Excel, <strong>Dados → Solver</strong>). O modelo já vem preenchido; mostre os campos e feche. Se quiser, clique em <strong>Resolver/Solve</strong>; o resultado será o mesmo. O Solver do Excel fica salvo na planilha e o LibreOffice Calc reconhece os campos ao abrir.</p>
+<h2 id="cronograma-do-projeto">Cronograma do projeto<a class="headerlink" href="#cronograma-do-projeto" title="Permanent link">&para;</a></h2>
+<p><strong>Arquivo:</strong> <code>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx</code></p>
+<table>
+<thead>
+<tr>
+<th>Aba</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Visão Geral</code></td>
+<td>Consolidação das entregas, papéis, foco técnico e status</td>
+</tr>
+<tr>
+<td><code>Guilherme</code></td>
+<td>Governança do repositório, contrato de API, revisão e homologação</td>
+</tr>
+<tr>
+<td><code>Vinícius</code></td>
+<td>Setup do frontend, formulário objetivo, integração com a API e UX</td>
+</tr>
+<tr>
+<td><code>Éric</code></td>
+<td>Backend Flask, algoritmo Simplex/PuLP, API e code freeze</td>
+</tr>
+<tr>
+<td><code>Otávio + Adria</code></td>
+<td>Documentação MkDocs, fundamentação matemática, arquitetura e revisão</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Entregas planejadas:</strong> 28/05, 03/06, 11/06 e 17/06. A <code>Visão Geral</code> registra a apresentação em 18/06/2026; confira se essa é a data real antes de citá-la.</p>
+<p><strong>Status:</strong> a primeira entrega aparece como <code>CONCLUÍDO</code>; as demais estão como <code>Pendente</code> nas abas individuais. Se a apresentação for depois da execução, atualize a planilha ou apresente-a como cronograma planejado.</p>
+<p><strong>Frase-chave:</strong> “A Visão Geral consolida as entregas e o status; as abas individuais detalham as tarefas de cada frente.”</p>
+<h2 id="numeros-da-demonstracao">Números da demonstração<a class="headerlink" href="#numeros-da-demonstracao" title="Permanent link">&para;</a></h2>
+<p><strong>Demo simples — “Demo Rápida”</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objetivo</td>
+<td>Maximizar</td>
+</tr>
+<tr>
+<td>Variável <code>Sites</code></td>
+<td>Coeficiente 3.000 / unidade “projetos”</td>
+</tr>
+<tr>
+<td>Variável <code>Apps</code></td>
+<td>Coeficiente 2.000 / unidade “projetos”</td>
+</tr>
+<tr>
+<td>Restrição “Capacidade da equipe”</td>
+<td>1 Site + 1 App ≤ 10</td>
+</tr>
+<tr>
+<td>Restrição “Horas de desenvolvimento”</td>
+<td>2 Sites + 1 App ≤ 16</td>
+</tr>
+<tr>
+<td>Resultado esperado</td>
+<td>6 Sites e 4 Apps</td>
+</tr>
+<tr>
+<td>Lucro esperado</td>
+<td>R$ 26.000</td>
+</tr>
+<tr>
+<td>Restrições</td>
+<td>Ambas 100% utilizadas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Problema oficial — “Maximização da Empresa de TI”</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variável</th>
+<th style="text-align: right;">Lucro</th>
+<th style="text-align: right;">Horas Dev.</th>
+<th style="text-align: right;">Horas Esp.</th>
+<th style="text-align: right;">Infraestrutura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Des. Web</td>
+<td style="text-align: right;">20.000</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">20.000</td>
+</tr>
+<tr>
+<td>Des. Mobile</td>
+<td style="text-align: right;">25.000</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">25.000</td>
+</tr>
+<tr>
+<td>Suporte Téc. Mensal</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">10.000</td>
+</tr>
+<tr>
+<td>Análise de Dados</td>
+<td style="text-align: right;">30.000</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">40.000</td>
+</tr>
+<tr>
+<td>Cibersegurança</td>
+<td style="text-align: right;">35.000</td>
+<td style="text-align: right;">350</td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">50.000</td>
+</tr>
+<tr>
+<td><strong>Limite</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>4.000</strong></td>
+<td style="text-align: right;"><strong>3.000</strong></td>
+<td style="text-align: right;"><strong>500.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Resultado:</strong> 50 contratos de Suporte Técnico Mensal; lucro de <strong>R$ 500.000</strong>; todas as restrições com folga zero.</p>
+<h2 id="comandos">Comandos<a class="headerlink" href="#comandos" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Atalho:</strong> na raiz do projeto, <code>./scripts/iniciar-technopti.sh</code> sobe os dois servidores e <code>./scripts/parar-technopti.sh</code> encerra. No Windows, use <code>.\scripts\windows\iniciar-technopti.ps1</code> e <code>.\scripts\windows\parar-technopti.ps1</code>.</p>
+</blockquote>
+<p><strong>Backend — 1ª vez</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>python<span class="w"> </span>run.py
+</code></pre></div>
+<p><strong>Frontend — 1ª vez (outro terminal)</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>frontend
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>npm<span class="w"> </span>install
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Nas próximas vezes, pule a criação da venv, o <code>pip install</code> e o <code>npm install</code>. Basta ativar a venv e rodar <code>python run.py</code> e <code>npm run dev</code>.</p>
+<p><strong>Teste rápido da API</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>http://127.0.0.1:5000/problems
+</code></pre></div>
+<p><strong>Arquivos de apoio no modo claro</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--calc<span class="w"> </span>docs/assets/materiais/EXERCICIO_PROJETO_FINAL.xlsx
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--calc<span class="w"> </span>docs/assets/materiais/CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>./scripts/abrir-libreoffice-claro.sh<span class="w"> </span>--writer<span class="w"> </span>docs/assets/materiais/TRABALHO-FINAL*.docx
+</code></pre></div>
+<h2 id="backup-e-emergencia">Backup e emergência<a class="headerlink" href="#backup-e-emergencia" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>backend
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>cp<span class="w"> </span>db.sqlite3<span class="w"> </span>db.sqlite3.backup
+</code></pre></div>
+<p>Restaurar: <code>cp db.sqlite3.backup db.sqlite3</code></p>
+<p>Verificar portas: <code>ss -ltnp | grep -E ':5000|:5173'</code></p>
+<p>Encerrar processo, se necessário: <code>fuser -k 5000/tcp</code> e <code>fuser -k 5173/tcp</code></p>
+<h2 id="plano-b">Plano B<a class="headerlink" href="#plano-b" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Se a demo simples falhar, abra direto o problema oficial.</li>
+<li>Se o Solver não abrir, mostre a tabela de resultados e explique os campos; o resultado já está na planilha.</li>
+<li>Se o cronograma não abrir, use a <code>Visão Geral</code> ou mostre a lista de abas deste roteiro.</li>
+<li>Se o backend cair, reinicie com <code>python run.py</code>.</li>
+<li>Se o PDF falhar, mostre o PDF de backup.</li>
+<li>Se a internet cair, o sistema continua funcionando localmente após a instalação.</li>
+</ul>
+<h2 id="perguntas-provaveis">Perguntas prováveis<a class="headerlink" href="#perguntas-provaveis" title="Permanent link">&para;</a></h2>
+<p><strong>Por que só suporte?</strong> Maior lucro por hora escassa: R$ 125/h contra R$ 100/h.</p>
+<p><strong>A solução é inteira?</strong> Variáveis contínuas; os valores inteiros são consequência do modelo.</p>
+<p><strong>Se não houver solução?</strong> O sistema mostra <code>Infeasible</code> (restrições conflitantes) ou <code>Unbounded</code> (crescimento infinito).</p>
+<p><strong>Qual solver?</strong> PuLP com CBC; a documentação apresenta o método Simplex.</p>
+<p><strong>Por que usar o Solver da planilha se o Technopti já resolve?</strong> A planilha foi a validação manual do modelo e do resultado; o Technopti automatiza e padroniza o processo.</p>
+<p><strong>O Solver da planilha é o mesmo do Technopti?</strong> Não. A planilha usa o Solver do Excel/LibreOffice; o Technopti usa PuLP com CBC. Os dois chegam ao mesmo resultado porque o modelo é o mesmo.</p>
+<p><strong>O que o cronograma mostra?</strong> A visão consolidada das entregas e o detalhamento das tarefas por frente, com datas e status.</p>
+<p><strong>As datas do cronograma são as da apresentação?</strong> A <code>Visão Geral</code> registra 18/06/2026; confirme a data real antes de citar.</p>
+<p><strong>Como o PDF é gerado?</strong> No navegador, com <code>html2pdf.js</code>.</p>
+<p><strong>Limitações?</strong> Sem autenticação, um objetivo por problema, variáveis contínuas e banco local SQLite.</p>
+<p><strong>Diferença entre coeficientes?</strong> O da função objetivo é o lucro/custo por unidade; o da restrição é o consumo de recurso por unidade.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../apresentacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Visão geral">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Visão geral
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../documentacao-pdf/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Documentação em PDF">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Documentação em PDF
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Technopti · Projeto de Programação Linear
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1982 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação do sistema de otimização de problemas de Programação Linear">
+      
+      
+        <meta name="author" content="Projeto Technopti">
+      
+      
+      
+        <link rel="prev" href="../modelo-matematico/">
+      
+      
+        <link rel="next" href="../mkdocs/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/img/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Estrutura - Technopti</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estrutura-do-projeto" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Technopti" class="md-header__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Technopti
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Estrutura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Technopti" class="md-nav__button md-logo" aria-label="Technopti" data-md-component="logo">
+      
+  <img src="../assets/img/logo.svg" alt="logo">
+
+    </a>
+    Technopti
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apresentação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apresentação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roteiro-apresentacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roteiro em texto
+  
+
+    
+      <br>
+      <small>Apresentação solo | 5 a 7 minutos</small>
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao-pdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação em PDF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projeto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projeto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-executar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Como executar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend e banco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API REST
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelo-matematico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelo matemático
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estrutura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arvore-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Árvore principal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-versionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é versionado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sessao-por-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sessão por thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-e-transacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação e transação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variavel_de_decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variavel_de_Decisao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coeficienterestricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoeficienteRestricao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paginas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Páginas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotas-do-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas do frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiais-oficiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materiais oficiais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentação (MkDocs)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD e release
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arvore-principal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Árvore principal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-versionado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O que é versionado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sessao-por-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sessão por thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validacao-e-transacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação e transação
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Banco de dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Banco de dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variavel_de_decisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variavel_de_Decisao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restricao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coeficienterestricao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoeficienteRestricao
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paginas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Páginas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotas-do-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotas do frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiais-oficiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materiais oficiais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="estrutura-do-projeto">Estrutura do projeto<a class="headerlink" href="#estrutura-do-projeto" title="Permanent link">&para;</a></h1>
+<h2 id="arvore-principal">Árvore principal<a class="headerlink" href="#arvore-principal" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>TechnoPTI/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── README.md
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── LICENSE
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── .gitignore
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── .gitattributes
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── .dockerignore
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── Dockerfile
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── mkdocs.yml
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── requirements-docs.txt
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── .github/
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   └── workflows/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       ├── ci.yml
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       ├── docs.yml
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│       └── release.yml
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── backend/
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   ├── README.md
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   ├── app.py
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   ├── run.py
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   ├── database.py
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   ├── models.py
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│   ├── solver.py
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   ├── requirements.txt
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   ├── requirements-prod.txt
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   ├── api-tester.html
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   ├── db.sqlite3
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   ├── db.sqlite3.backup
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│   ├── routes/
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   │   ├── problems.py
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   │   └── results.py
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   ├── tests/
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   │   └── test_api.py
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   └── arquivo/
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│       ├── README.md
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│       ├── main.py
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│       └── teste.py
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>├── frontend/
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   ├── README.md
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   ├── .env.example
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   ├── package.json
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   ├── package-lock.json
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   ├── vite.config.js
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   ├── eslint.config.js
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│   ├── jsconfig.json
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   ├── index.html
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│   ├── public/
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│   │   ├── background.png
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   │   └── technopti-logo.png
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   └── src/
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│       ├── api.js
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│       ├── App.jsx
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│       ├── main.jsx
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│       ├── index.css
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│       ├── Paginas/
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│       ├── componentes/
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│       └── components/ui/
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>├── docs/
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>│   ├── index.md
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│   ├── apresentacao.md
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│   ├── roteiro-apresentacao.md
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>│   ├── documentacao-pdf.md
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>│   ├── projeto.md
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>│   ├── como-executar.md
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>│   ├── frontend.md
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>│   ├── backend.md
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>│   ├── api.md
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>│   ├── modelo-matematico.md
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>│   ├── estrutura.md
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>│   ├── mkdocs.md
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>│   ├── ci-cd.md
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>│   ├── faq.md
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>│   ├── assets/
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>│   │   ├── materiais/
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>│   │   │   ├── ROTEIRO-APRESENTACAO-TECHNOPTI.pdf
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>│   │   │   ├── Relatorio-Oficial-Technopti.pdf
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>│   │   │   ├── EXERCICIO_PROJETO_FINAL.xlsx
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>│   │   │   ├── CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>│   │   │   └── TRABALHO-FINAL-APLICACAO-PROGRAMACAO-LINEAR.docx
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>│   │   ├── arquivo/
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>│   │   │   ├── roteiro-grupo-final.pdf
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>│   │   │   ├── technopti-documentacao-36p.pdf
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>│   │   │   └── projeto-pacote-antigo.zip
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>│   │   └── img/
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>│   │       ├── home.jpg
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>│   │       ├── logo.svg
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>│   │       └── relatorio-oficial.png
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a>│   └── stylesheets/extra.css
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>└── scripts/
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>    ├── iniciar-technopti.sh
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>    ├── parar-technopti.sh
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>    ├── iniciar-docs.sh
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>    ├── gerar-docs.sh
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a>    ├── parar-docs.sh
+<a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>    ├── abrir-libreoffice-claro.sh
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>    └── windows/
+<a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a>        ├── _common.ps1
+<a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a>        ├── iniciar-technopti.ps1
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a>        ├── parar-technopti.ps1
+<a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a>        ├── iniciar-docs.ps1
+<a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>        ├── gerar-docs.ps1
+<a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>        └── parar-docs.ps1
+</code></pre></div>
+<h2 id="o-que-e-versionado">O que é versionado<a class="headerlink" href="#o-que-e-versionado" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Caminho</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docs/</code>, <code>mkdocs.yml</code></td>
+<td>Versionados. São a fonte do site.</td>
+</tr>
+<tr>
+<td><code>.github/workflows/</code></td>
+<td>Versionado. CI, publicação da documentação e release.</td>
+</tr>
+<tr>
+<td><code>Dockerfile</code>, <code>.dockerignore</code></td>
+<td>Versionados. Imagem publicada no GHCR.</td>
+</tr>
+<tr>
+<td><code>docs/assets/materiais/</code></td>
+<td>Versionado. PDFs, planilhas e DOCX oficiais para download.</td>
+</tr>
+<tr>
+<td><code>docs/assets/arquivo/</code></td>
+<td>Versionado. Materiais históricos. O ZIP foi sanitizado sem a pasta <code>.git</code>.</td>
+</tr>
+<tr>
+<td><code>site/</code></td>
+<td>Ignorado. É gerado pelo <code>mkdocs build</code>.</td>
+</tr>
+<tr>
+<td><code>.mkdocs-venv/</code></td>
+<td>Ignorado. Ambiente local da documentação.</td>
+</tr>
+<tr>
+<td><code>backend/venv/</code></td>
+<td>Ignorado. Ambiente local do Python.</td>
+</tr>
+<tr>
+<td><code>frontend/node_modules/</code></td>
+<td>Ignorado. Dependências do npm.</td>
+</tr>
+<tr>
+<td><code>frontend/dist/</code></td>
+<td>Ignorado. Build do Vite.</td>
+</tr>
+<tr>
+<td><code>frontend/.env.local</code></td>
+<td>Ignorado. Configuração local da URL da API.</td>
+</tr>
+<tr>
+<td><code>frontend/.env.example</code></td>
+<td>Versionado. Modelo de configuração.</td>
+</tr>
+<tr>
+<td><code>__pycache__/</code>, <code>*.pyc</code></td>
+<td>Ignorados. Cache do Python.</td>
+</tr>
+<tr>
+<td><code>.technopti-logs/</code></td>
+<td>Ignorado. Logs e PIDs dos scripts.</td>
+</tr>
+<tr>
+<td><code>backend/db.sqlite3</code> e <code>db.sqlite3.backup</code></td>
+<td>Versionados de propósito para a demonstração.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h2>
+<p>Todos os comandos são executados a partir da raiz do repositório:</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/iniciar-technopti.sh</code></td>
+<td>Cria os ambientes se necessário e sobe backend e frontend.</td>
+</tr>
+<tr>
+<td><code>scripts/parar-technopti.sh</code></td>
+<td>Encerra backend e frontend pelas portas e pelos PIDs salvos.</td>
+</tr>
+<tr>
+<td><code>scripts/iniciar-docs.sh</code></td>
+<td>Serve o MkDocs em <code>http://127.0.0.1:8000</code>.</td>
+</tr>
+<tr>
+<td><code>scripts/gerar-docs.sh</code></td>
+<td>Gera o site com <code>mkdocs build --clean --strict</code>.</td>
+</tr>
+<tr>
+<td><code>scripts/parar-docs.sh</code></td>
+<td>Encerra o servidor da documentação.</td>
+</tr>
+<tr>
+<td><code>scripts/abrir-libreoffice-claro.sh</code></td>
+<td>Utilitário opcional para abrir planilhas e DOCX no LibreOffice.</td>
+</tr>
+</tbody>
+</table>
+<p>No <strong>Windows</strong>, os equivalentes estão em <code>scripts/windows/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>windows/iniciar-technopti.ps1</code></td>
+<td>Sobe backend e frontend.</td>
+</tr>
+<tr>
+<td><code>windows/parar-technopti.ps1</code></td>
+<td>Encerra backend e frontend.</td>
+</tr>
+<tr>
+<td><code>windows/iniciar-docs.ps1</code></td>
+<td>Serve o MkDocs.</td>
+</tr>
+<tr>
+<td><code>windows/gerar-docs.ps1</code></td>
+<td>Gera o site com <code>--strict</code>.</td>
+</tr>
+<tr>
+<td><code>windows/parar-docs.ps1</code></td>
+<td>Encerra o servidor da documentação.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
+<p>O código fica em <code>backend/</code>. Os principais arquivos são:</p>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.py</code></td>
+<td>Cria o Flask, habilita CORS, registra os blueprints e remove a sessão ao final da requisição.</td>
+</tr>
+<tr>
+<td><code>run.py</code></td>
+<td>Inicia o backend em <code>127.0.0.1:5000</code> sem o modo de recarga, usado pelos scripts.</td>
+</tr>
+<tr>
+<td><code>database.py</code></td>
+<td>Cria o engine SQLite e uma <code>scoped_session</code> (uma sessão por thread/requisição).</td>
+</tr>
+<tr>
+<td><code>models.py</code></td>
+<td>Define as cinco tabelas e cria o schema no banco.</td>
+</tr>
+<tr>
+<td><code>solver.py</code></td>
+<td>Monta o modelo PuLP, chama o CBC e devolve status, valor ótimo e variáveis.</td>
+</tr>
+<tr>
+<td><code>routes/problems.py</code></td>
+<td>Lista, detalha, cria e exclui problemas.</td>
+</tr>
+<tr>
+<td><code>routes/results.py</code></td>
+<td>Resolve o problema e consulta o último resultado.</td>
+</tr>
+<tr>
+<td><code>tests/test_api.py</code></td>
+<td>Testes de fumaça usados pelo CI.</td>
+</tr>
+<tr>
+<td><code>api-tester.html</code></td>
+<td>Página estática para testar as rotas manualmente.</td>
+</tr>
+</tbody>
+</table>
+<p>O caminho do banco é calculado a partir de <code>backend/database.py</code>, então o
+backend encontra <code>db.sqlite3</code> mesmo que seja iniciado da raiz do repositório.</p>
+<h3 id="sessao-por-thread">Sessão por thread<a class="headerlink" href="#sessao-por-thread" title="Permanent link">&para;</a></h3>
+<p>O backend usa <code>scoped_session</code> para evitar que duas requisições concorrentes
+compartilhem a mesma sessão do SQLAlchemy. O <code>app.py</code> registra um
+<code>teardown_appcontext</code> que chama <code>session.remove()</code> ao final de cada requisição.</p>
+<h3 id="validacao-e-transacao">Validação e transação<a class="headerlink" href="#validacao-e-transacao" title="Permanent link">&para;</a></h3>
+<p>A criação do problema usa <code>session.flush()</code> para obter os IDs gerados e
+<code>session.rollback()</code> quando uma validação falha. O <code>commit</code> só acontece depois
+de criar problema, variáveis, restrições e coeficientes. Veja o detalhamento em
+<a href="../backend/">Backend e banco</a>.</p>
+<h2 id="banco-de-dados">Banco de dados<a class="headerlink" href="#banco-de-dados" title="Permanent link">&para;</a></h2>
+<h3 id="problema"><code>Problema</code><a class="headerlink" href="#problema" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Coluna</th>
+<th>Tipo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idProblema</code></td>
+<td>Integer</td>
+<td>Chave primária.</td>
+</tr>
+<tr>
+<td><code>Nome_Problema</code></td>
+<td>String(45)</td>
+<td>Nome exibido na interface.</td>
+</tr>
+<tr>
+<td><code>Data_Criacao</code></td>
+<td>Date</td>
+<td>Data de criação.</td>
+</tr>
+<tr>
+<td><code>objetivo</code></td>
+<td>String(200)</td>
+<td><code>maximize</code> ou <code>minimize</code>.</td>
+</tr>
+<tr>
+<td><code>resolvido</code></td>
+<td>Boolean</td>
+<td>Indica se já foi resolvido.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variavel_de_decisao"><code>Variavel_de_Decisao</code><a class="headerlink" href="#variavel_de_decisao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Coluna</th>
+<th>Tipo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idVariavel_de_Decisao</code></td>
+<td>Integer</td>
+<td>Chave primária.</td>
+</tr>
+<tr>
+<td><code>Nome</code></td>
+<td>String(45)</td>
+<td>Nome da variável.</td>
+</tr>
+<tr>
+<td><code>Unidade_Medida</code></td>
+<td>String(45)</td>
+<td>Ex.: <code>projetos</code>, <code>contratos</code>.</td>
+</tr>
+<tr>
+<td><code>Lucro</code></td>
+<td>Float</td>
+<td>Lucro/custo calculado após a resolução.</td>
+</tr>
+<tr>
+<td><code>Coeficiente</code></td>
+<td>Float</td>
+<td>Coeficiente na função objetivo.</td>
+</tr>
+<tr>
+<td><code>Problema_idProblema</code></td>
+<td>Integer</td>
+<td>FK para <code>Problema</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="restricao"><code>Restricao</code><a class="headerlink" href="#restricao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Coluna</th>
+<th>Tipo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idRestricao</code></td>
+<td>Integer</td>
+<td>Chave primária.</td>
+</tr>
+<tr>
+<td><code>Tipo</code></td>
+<td>String(45)</td>
+<td>Nome da restrição.</td>
+</tr>
+<tr>
+<td><code>Limite</code></td>
+<td>Float</td>
+<td>Lado direito da restrição.</td>
+</tr>
+<tr>
+<td><code>Operador</code></td>
+<td>String(5)</td>
+<td><code>&lt;=</code>, <code>&gt;=</code> ou <code>=</code>.</td>
+</tr>
+<tr>
+<td><code>atendida</code></td>
+<td>Boolean</td>
+<td>Preenchido após a resolução.</td>
+</tr>
+<tr>
+<td><code>Problema_idProblema</code></td>
+<td>Integer</td>
+<td>FK para <code>Problema</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coeficienterestricao"><code>CoeficienteRestricao</code><a class="headerlink" href="#coeficienterestricao" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Coluna</th>
+<th>Tipo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>Chave primária.</td>
+</tr>
+<tr>
+<td><code>valor</code></td>
+<td>Float</td>
+<td>Coeficiente da variável na restrição.</td>
+</tr>
+<tr>
+<td><code>variavel_id</code></td>
+<td>Integer</td>
+<td>FK para <code>Variavel_de_Decisao</code>.</td>
+</tr>
+<tr>
+<td><code>restricao_id</code></td>
+<td>Integer</td>
+<td>FK para <code>Restricao</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resultados"><code>Resultados</code><a class="headerlink" href="#resultados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Coluna</th>
+<th>Tipo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>idResultados</code></td>
+<td>Integer</td>
+<td>Chave primária.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String(50)</td>
+<td><code>Optimal</code>, <code>Infeasible</code>, <code>Unbounded</code> etc.</td>
+</tr>
+<tr>
+<td><code>Quantidade_Otima</code></td>
+<td>Float</td>
+<td>Valor ótimo da função objetivo.</td>
+</tr>
+<tr>
+<td><code>Problema_idProblema</code></td>
+<td>Integer</td>
+<td>FK para <code>Problema</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>O banco não usa <code>relationship()</code> do SQLAlchemy: as consultas são feitas
+explicitamente nas rotas. O schema é criado por <code>Base.metadata.create_all(db)</code>
+no import de <code>models.py</code>; não há migrações automáticas.</p>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
+<p>O código fica em <code>frontend/</code>. As páginas e os componentes principais são:</p>
+<h3 id="paginas">Páginas<a class="headerlink" href="#paginas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Tela</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/App.jsx</code></td>
+<td>Define as rotas com React Router.</td>
+</tr>
+<tr>
+<td><code>src/Paginas/RootLayout.jsx</code></td>
+<td>Layout raiz com cabeçalho e outlet.</td>
+</tr>
+<tr>
+<td><code>src/Paginas/Home.jsx</code></td>
+<td>Lista de problemas, abertura do relatório e exclusão.</td>
+</tr>
+<tr>
+<td><code>src/Paginas/Problema.jsx</code></td>
+<td>Cadastro guiado em quatro etapas.</td>
+</tr>
+<tr>
+<td><code>src/Paginas/TelaVisaoGeral.jsx</code></td>
+<td>Visão geral do problema em edição.</td>
+</tr>
+<tr>
+<td><code>src/Paginas/TelaResultado.jsx</code></td>
+<td>Resultado, gráfico e exportação em PDF.</td>
+</tr>
+<tr>
+<td><code>src/api.js</code></td>
+<td>Instância do Axios com a URL da API configurável.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="componentes">Componentes<a class="headerlink" href="#componentes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Responsabilidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Abas.jsx</code></td>
+<td>Navegação entre variáveis e restrições.</td>
+</tr>
+<tr>
+<td><code>CardVariavel.jsx</code></td>
+<td>Card de variável de decisão.</td>
+</tr>
+<tr>
+<td><code>CardRestricao.jsx</code></td>
+<td>Card de restrição e vínculo de coeficientes.</td>
+</tr>
+<tr>
+<td><code>CardProblema.jsx</code></td>
+<td>Card do problema, modal de relatório e exportação em PDF.</td>
+</tr>
+<tr>
+<td><code>GraficoPizza.jsx</code></td>
+<td>Gráfico de participação das variáveis.</td>
+</tr>
+<tr>
+<td><code>Cabecalho.jsx</code></td>
+<td>Cabeçalho da aplicação.</td>
+</tr>
+<tr>
+<td><code>BotaoAjuda.jsx</code></td>
+<td>Ajuda contextual.</td>
+</tr>
+</tbody>
+</table>
+<p>A URL da API vem de <code>VITE_API_URL</code>. Em desenvolvimento, o padrão é
+<code>http://127.0.0.1:5000</code>; no build de produção servido pelo Flask, o padrão é a
+própria origem. Copie <code>frontend/.env.example</code> para <code>frontend/.env.local</code> apenas
+se precisar apontar para outro backend.</p>
+<h3 id="rotas-do-frontend">Rotas do frontend<a class="headerlink" href="#rotas-do-frontend" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rota</th>
+<th>Tela</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Home com a lista de problemas.</td>
+</tr>
+<tr>
+<td><code>/problem</code></td>
+<td>Cadastro de um novo problema; o resultado é a etapa 4.</td>
+</tr>
+</tbody>
+</table>
+<p>O detalhamento do fluxo, do estado e da integração com a API está em
+<a href="../frontend/">Frontend</a>.</p>
+<h2 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mkdocs.yml</code></td>
+<td>Configuração do site, tema, extensões e navegação.</td>
+</tr>
+<tr>
+<td><code>docs/index.md</code></td>
+<td>Página inicial.</td>
+</tr>
+<tr>
+<td><code>docs/apresentacao.md</code></td>
+<td>Materiais oficiais da apresentação solo.</td>
+</tr>
+<tr>
+<td><code>docs/roteiro-apresentacao.md</code></td>
+<td>Roteiro completo em texto.</td>
+</tr>
+<tr>
+<td><code>docs/documentacao-pdf.md</code></td>
+<td>Documentação técnica e materiais em PDF.</td>
+</tr>
+<tr>
+<td><code>docs/projeto.md</code></td>
+<td>Contexto, arquitetura e fluxo funcional.</td>
+</tr>
+<tr>
+<td><code>docs/como-executar.md</code></td>
+<td>Instalação, scripts e solução de problemas.</td>
+</tr>
+<tr>
+<td><code>docs/frontend.md</code></td>
+<td>Telas, componentes, estado e PDF.</td>
+</tr>
+<tr>
+<td><code>docs/backend.md</code></td>
+<td>Flask, SQLAlchemy, SQLite e solver.</td>
+</tr>
+<tr>
+<td><code>docs/api.md</code></td>
+<td>Contrato da API REST.</td>
+</tr>
+<tr>
+<td><code>docs/modelo-matematico.md</code></td>
+<td>Formulação e solução.</td>
+</tr>
+<tr>
+<td><code>docs/estrutura.md</code></td>
+<td>Esta página.</td>
+</tr>
+<tr>
+<td><code>docs/mkdocs.md</code></td>
+<td>Fluxo de edição e publicação do site.</td>
+</tr>
+<tr>
+<td><code>docs/ci-cd.md</code></td>
+<td>GitHub Actions, releases e pacote GHCR.</td>
+</tr>
+<tr>
+<td><code>docs/faq.md</code></td>
+<td>Perguntas frequentes.</td>
+</tr>
+</tbody>
+</table>
+<p>O site é gerado em <code>site/</code> e não é versionado. Veja
+<a href="../mkdocs/">Documentação (MkDocs)</a>.</p>
+<h2 id="materiais-oficiais">Materiais oficiais<a class="headerlink" href="#materiais-oficiais" title="Permanent link">&para;</a></h2>
+<p>Os arquivos para download ficam em <code>docs/assets/materiais/</code>:</p>
+<ul>
+<li><code>ROTEIRO-APRESENTACAO-TECHNOPTI.pdf</code> — roteiro para imprimir;</li>
+<li><code>Relatorio-Oficial-Technopti.pdf</code> — backup do relatório da demonstração;</li>
+<li><code>EXERCICIO_PROJETO_FINAL.xlsx</code> — planilha com o Solver;</li>
+<li><code>CRONOGRAMA_PROJETO_PROGRAMACAO_LINEAR_ATUALIZADO.xlsx</code> — cronograma;</li>
+<li><code>TRABALHO-FINAL-APLICACAO-PROGRAMACAO-LINEAR.docx</code> — trabalho final.</li>
+</ul>
+<p>O roteiro editável em Markdown é <code>docs/roteiro-apresentacao.md</code>. Os roteiros
+antigos de grupo, a documentação técnica de 36 páginas e o pacote antigo do
+projeto (sem a pasta <code>.git</code>) ficam em <code>docs/assets/arquivo/</code> apenas para
+histórico. Veja <a href="../apresentacao/">Apresentação</a> e
+<a href="../documentacao-pdf/">Documentação em PDF</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../modelo-matematico/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Modelo matemático">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Modelo matemático
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mkdocs/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Documentação (MkDocs)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Documentação (MkDocs)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Technopti · Projeto de Programação Linear
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
