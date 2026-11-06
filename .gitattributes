@@ -1,0 +1,12 @@
+# Normaliza arquivos de texto e evita conversão em binários.
+* text=auto eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.xlsx binary
+*.docx binary
+*.zip binary
+*.sqlite3 binary
